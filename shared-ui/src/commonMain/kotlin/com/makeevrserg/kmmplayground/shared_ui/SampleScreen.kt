@@ -10,7 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.makeevrserg.kmmplayground.Greeting
 import com.makeevrserg.kmmplayground.shared_ui.shared.sharedPainter
-import com.makeevrserg.kmmplayground.MR
+import com.makeevrserg.kmmplayground.shared.MR
 
 @Composable
 fun SampleScreen() {

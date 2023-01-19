@@ -20,7 +20,7 @@ kotlin {
                 implementation(compose.material)
                 implementation(compose.materialIconsExtended)
                 implementation(compose.runtime)
-                api(libs.moko.resources.core)
+//                api(libs.moko.resources.core)
                 // Network
                 implementation(libs.ktor.client.core)
                 // Navigation

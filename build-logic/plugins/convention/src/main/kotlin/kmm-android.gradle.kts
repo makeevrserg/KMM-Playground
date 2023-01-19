@@ -5,6 +5,8 @@ import com.makeevrserg.kmmplayground.Application.COMPILE_SDK_VERSION
 import com.makeevrserg.kmmplayground.Application.MIN_SDK_VERSION
 import com.makeevrserg.kmmplayground.Application.TARGET_SDK_VERSION
 import org.gradle.kotlin.dsl.kotlin
+group = GROUP
+version = VERSION_NAME
 
 plugins {
     id("com.android.library")

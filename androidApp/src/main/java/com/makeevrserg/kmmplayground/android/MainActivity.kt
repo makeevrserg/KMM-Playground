@@ -22,7 +22,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.makeevrserg.kmmplayground.Greeting
-import com.makeevrserg.kmmplayground.MR
 import com.makeevrserg.kmmplayground.shared_ui.SampleScreen
 
 
