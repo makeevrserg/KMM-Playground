@@ -4,14 +4,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 
 plugins {
+    id("kmm-jvm")
     kotlin("multiplatform")
     id("org.jetbrains.compose")
 }
 kotlin {
     jvm {
-        compilations.all {
-            kotlinOptions.jvmTarget = "11"
-        }
         withJava()
     }
     sourceSets {

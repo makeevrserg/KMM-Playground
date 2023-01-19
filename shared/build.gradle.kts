@@ -1,38 +1,24 @@
 import com.makeevrserg.kmmplayground.Application
 
 plugins {
-    kotlin("multiplatform")
+    id("kmm-ios")
+    id("kmm-jvm")
+    id("kmm-android")
+    id("kmm-cocoapods")
     kotlin("native.cocoapods")
     id("dev.icerock.mobile.multiplatform-resources")
     id("dev.icerock.moko.kswift")
-    id("kmm-android")
 }
 
 kotlin {
-    android()
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
-    jvm {
-        compilations.all {
-            kotlinOptions.jvmTarget = "11"
-        }
-    }
-    cocoapods {
-        summary = "Some description for the Shared Module"
-        homepage = "Link to the Shared Module homepage"
-        version = "1.0"
-        ios.deploymentTarget = "14.1"
-        podfile = project.file("../iosApp/Podfile")
-        framework {
-            baseName = "shared"
-            isStatic = false
-            export(libs.moko.mvvm.core)
-            export(libs.moko.mvvm.flow)
-            export(libs.moko.resources.core)
-            export(libs.moko.graphics)
-            export(libs.moko.kswift)
-        }
+    cocoapods.framework {
+        baseName = "shared"
+        isStatic = false
+        export(libs.moko.mvvm.core)
+        export(libs.moko.mvvm.flow)
+        export(libs.moko.resources.core)
+        export(libs.moko.graphics)
+        export(libs.moko.kswift)
     }
 
     sourceSets {

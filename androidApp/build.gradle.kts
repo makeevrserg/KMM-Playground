@@ -1,29 +1,11 @@
 plugins {
-    id("com.android.application")
+    id("android-app-convention")
     kotlin("android")
 }
 
 android {
-    namespace = "com.makeevrserg.kmmplayground.android"
-    compileSdk = 33
-    defaultConfig {
-        applicationId = "com.makeevrserg.kmmplayground.android"
-        minSdk = 21
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.0"
-    }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
+    buildFeatures.compose = true
+    composeOptions.kotlinCompilerExtensionVersion = "1.3.0"
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false

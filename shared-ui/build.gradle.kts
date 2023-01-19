@@ -1,20 +1,15 @@
 import org.jetbrains.compose.compose
 
 plugins {
-    kotlin("plugin.serialization")
-    id("org.jetbrains.compose")
-    kotlin("multiplatform")
     id("kmm-android")
+    id("kmm-jvm")
+    id("org.jetbrains.compose")
     id("dev.icerock.moko.kswift")
+    kotlin("plugin.serialization")
 }
 kotlin {
-    android() {
+    android {
         apply(plugin = "kotlin-parcelize")
-    }
-    jvm {
-        compilations.all {
-            kotlinOptions.jvmTarget = "11"
-        }
     }
     sourceSets {
         val commonMain by getting {

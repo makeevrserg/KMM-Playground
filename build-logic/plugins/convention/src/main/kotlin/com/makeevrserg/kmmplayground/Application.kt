@@ -7,6 +7,7 @@ import java.util.Properties
 
 object Application {
     const val APPLICATION_ID = "com.makeevrserg.kmmplayground"
+    const val GROUP = "com.makeevrserg.kmmplayground"
 
     const val MIN_SDK_VERSION = 21
     const val TARGET_SDK_VERSION = 33
