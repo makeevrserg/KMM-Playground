@@ -1,0 +1,22 @@
+*.iml
+# IntelliJ
+.gradle
+.idea
+# MacOS
+.DS_Store
+# Build
+build
+androidApp/build
+build-logic/.gradle
+build-logic/build
+build-logic/plugins/convention/build
+desktop/build
+shared/build
+shared-ui/build
+iosApp/Pods
+
+captures
+.externalNativeBuild
+.cxx
+local.properties
+xcuserdata
