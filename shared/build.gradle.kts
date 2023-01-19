@@ -33,11 +33,13 @@ kotlin {
             }
         }
         val androidMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 implementation(libs.moko.resources.compose)
             }
         }
         val jvmMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 implementation(libs.moko.resources.compose)
             }
@@ -57,7 +59,7 @@ android {
     namespace = Application.APPLICATION_ID + ".shared"
 }
 multiplatformResources {
-    multiplatformResourcesPackage = Application.APPLICATION_ID
+    multiplatformResourcesPackage = Application.APPLICATION_ID + ".shared"
 }
 
 kswift {

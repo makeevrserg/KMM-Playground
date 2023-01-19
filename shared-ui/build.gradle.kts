@@ -21,24 +21,25 @@ kotlin {
                 implementation(compose.materialIconsExtended)
                 implementation(compose.runtime)
                 api(libs.moko.resources.core)
-                api(libs.moko.resources.core)
                 // Network
                 implementation(libs.ktor.client.core)
                 // Navigation
                 implementation("com.arkivanov.decompose:decompose:${libs.versions.decompose.get()}")
                 // Local
-                implementation(project(":shared"))
+                api(project(":shared"))
 
             }
         }
 
         val androidMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 implementation(libs.ktor.client.okhttp)
                 implementation(libs.moko.resources.compose)
             }
         }
         val jvmMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 implementation(libs.ktor.client.okhttp)
                 implementation(libs.moko.resources.compose)
@@ -47,7 +48,7 @@ kotlin {
     }
 }
 android {
-    namespace = "com.makeevrserg.kmmplayground.shared_ui"
+    namespace = com.makeevrserg.kmmplayground.Application.APPLICATION_ID + ".shared_ui"
 }
 kswift {
     install(dev.icerock.moko.kswift.plugin.feature.SealedToSwiftEnumFeature)

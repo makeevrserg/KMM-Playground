@@ -1,6 +1,5 @@
 plugins {
     id("android-app-convention")
-    kotlin("android")
 }
 
 android {

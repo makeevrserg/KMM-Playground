@@ -7,7 +7,6 @@ plugins {
 
 android {
     compileSdk = Application.COMPILE_SDK_VERSION
-    namespace = Application.APPLICATION_ID
     defaultConfig {
         applicationId = Application.APPLICATION_ID
         versionName = Application.VERSION_NAME
