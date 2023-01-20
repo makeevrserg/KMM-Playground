@@ -23,6 +23,10 @@ kotlin {
 //                api(libs.moko.resources.core)
                 // Network
                 implementation(libs.ktor.client.core)
+                // MobileX
+                implementation(libs.mobileX.uitext.core)
+                implementation(libs.mobileX.uitext.mr)
+                implementation(libs.mobileX.uitext.compose)
                 // Navigation
                 implementation("com.arkivanov.decompose:decompose:${libs.versions.decompose.get()}")
                 // Local

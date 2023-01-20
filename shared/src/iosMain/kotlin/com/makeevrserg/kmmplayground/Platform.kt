@@ -1,5 +1,8 @@
 package com.makeevrserg.kmmplayground
 
+import com.makeevrserg.kmmplayground.shared.MR
+import com.makeevrserg.mobilex.uitext.UiText
+import com.makeevrserg.mobilex.uitext.invoke
 import platform.UIKit.UIDevice
 
 class IOSPlatform: Platform {

@@ -11,7 +11,8 @@ import androidx.compose.ui.Modifier
 import com.makeevrserg.kmmplayground.Greeting
 import com.makeevrserg.kmmplayground.shared_ui.shared.sharedPainter
 import com.makeevrserg.kmmplayground.shared.MR
-
+import com.makeevrserg.mobilex.uitext.UiText
+import com.makeevrserg.mobilex.uitext.asComposableString
 @Composable
 fun SampleScreen() {
     Column(
@@ -20,6 +21,8 @@ fun SampleScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(Greeting().greeting())
+        Text(Greeting().platform.sharedHelloWorldAsRaw().asComposableString())
+        Text(Greeting().platform.sharedHelloWorldAsResource().asComposableString())
         Image(sharedPainter(MR.images.logo), "")
     }
 }

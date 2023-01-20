@@ -1,12 +1,12 @@
 package com.makeevrserg.kmmplayground
 
-import com.makeevrserg.kmmplayground.shared.R
+import com.makeevrserg.kmmplayground.shared.MR
+import com.makeevrserg.mobilex.uitext.UiText
+import com.makeevrserg.mobilex.uitext.invoke
 
 class AndroidPlatform : Platform {
     override val name: String = "Android ${android.os.Build.VERSION.SDK_INT}"
 }
-fun asds(){
-    R.string.splash_loading
-}
+
 
 actual fun getPlatform(): Platform = AndroidPlatform()

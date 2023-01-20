@@ -30,6 +30,9 @@ kotlin {
                 api(libs.moko.mvvm.flow)
                 api(libs.moko.resources.core)
                 api(libs.moko.kswift)
+                // MobileX
+                implementation(libs.mobileX.uitext.core)
+                implementation(libs.mobileX.uitext.mr)
             }
         }
         val androidMain by getting {

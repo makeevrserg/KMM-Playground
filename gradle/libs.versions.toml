@@ -48,7 +48,7 @@ coil = "2.0.0-rc03"
 # Koin
 koin = "3.2.2"
 # MobileX
-mobileX = "2.0.7"
+mobileX = "2.1.0-l48"
 # Compose
 kotlin-compose = "1.2.2"
 # Moko
@@ -123,6 +123,9 @@ koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", versi
 mobileX-core-android = { module = "ru.astrainteractive.mobilex:android-core", version.ref = "mobileX" }
 mobileX-core-compose = { module = "ru.astrainteractive.mobilex:core-compose", version.ref = "mobileX" }
 mobileX-core-ktx = { module = "ru.astrainteractive.mobilex:ktx-core", version.ref = "mobileX" }
+mobileX-uitext-core = { module = "ru.astrainteractive.mobilex:uitext-core", version.ref = "mobileX" }
+mobileX-uitext-mr = { module = "ru.astrainteractive.mobilex:uitext-mr", version.ref = "mobileX" }
+mobileX-uitext-compose = { module = "ru.astrainteractive.mobilex:uitext-compose", version.ref = "mobileX" }
 # Other
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 # Moko
