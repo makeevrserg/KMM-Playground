@@ -14,6 +14,7 @@ import shared
 struct ScreenChooser: View {
     
     @EnvironmentObject var navigation: Navigation
+    let greeting = Greeting()
     let greet = Greeting().greeting()
 
 
@@ -27,6 +28,8 @@ struct ScreenChooser: View {
                     MainStoryboardScreen
                 }
                 Text(greet)
+                Text(greeting.platform.sharedHelloWorldAsRaw().asString())
+                Text(greeting.platform.sharedHelloWorldAsResource().asString())
             }
             .navigationBarTitle("First Tab", displayMode: .large)
   
