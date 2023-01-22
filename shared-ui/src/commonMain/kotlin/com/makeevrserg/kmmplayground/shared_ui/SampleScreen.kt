@@ -14,12 +14,13 @@ import com.makeevrserg.kmmplayground.shared.MR
 import com.makeevrserg.mobilex.uitext.UiText
 import com.makeevrserg.mobilex.uitext.asComposableString
 @Composable
-fun SampleScreen() {
+fun SampleScreen(onBackClicked: ()->Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        BackToolBar("Sample", onBackClicked)
         Text(Greeting().greeting())
         Text(Greeting().platform.sharedHelloWorldAsRaw().asComposableString())
         Text(Greeting().platform.sharedHelloWorldAsResource().asComposableString())

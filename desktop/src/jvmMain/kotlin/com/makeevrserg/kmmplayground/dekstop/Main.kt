@@ -31,8 +31,8 @@ fun main() {
         ){
             Surface(Modifier.fillMaxSize()) {
                 MaterialTheme {
-                    Text("Hello")
-//                    RootContent(root)
+//                    Text("Hello")
+                    RootContent(root)
                 }
             }
         }

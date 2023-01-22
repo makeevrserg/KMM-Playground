@@ -6,10 +6,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.value.getValue
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.Children
+import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.slide
+import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
 import com.makeevrserg.kmmplayground.shared_ui.SampleScreen
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
 
@@ -21,6 +24,7 @@ fun RootContent(component: RootComponent, modifier: Modifier = Modifier) {
         Children(
             stack = childStack,
             modifier = Modifier.weight(weight = 1F),
+            animation = stackAnimation(slide()),
         ) {
             Text("${it.instance}")
             when (val child = it.instance) {
@@ -36,7 +40,9 @@ fun RootContent(component: RootComponent, modifier: Modifier = Modifier) {
                         Text("Open sample screen")
                     }
                 }
-                is RootComponent.Child.SampleScreen -> SampleScreen()
+                is RootComponent.Child.SampleScreen -> SampleScreen{
+                    component.pop()
+                }
                 is RootComponent.Child.RickMortyChild -> Text("Not implemented")
             }
         }
