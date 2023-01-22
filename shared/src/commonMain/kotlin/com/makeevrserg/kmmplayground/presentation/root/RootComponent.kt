@@ -9,6 +9,7 @@ interface RootComponent {
 
     fun onRickMortyClicked()
     fun onSampleClicked()
+    fun onReplaceSampleClicked()
     fun pop()
 
     sealed class Child {

@@ -34,6 +34,10 @@ class DefaultRootComponent(
         navigation.bringToFront(Config.Sample)
     }
 
+    override fun onReplaceSampleClicked() {
+        navigation.replaceCurrent(Config.Sample)
+    }
+
     override fun pop() {
         navigation.pop()
     }

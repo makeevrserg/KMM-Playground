@@ -19,6 +19,9 @@ kotlin {
         export(libs.moko.resources.core)
         export(libs.moko.graphics)
         export(libs.moko.kswift)
+        // Decompose
+        export(libs.decompose.core)
+        export(libs.essenty.lifecycle)
     }
 
     sourceSets {
@@ -34,7 +37,8 @@ kotlin {
                 implementation(libs.mobileX.uitext.core)
                 implementation(libs.mobileX.uitext.mr)
                 // Decompose
-                implementation(libs.decompose.core)
+                api(libs.decompose.core)
+                api(libs.essenty.lifecycle)
             }
         }
         val androidMain by getting {

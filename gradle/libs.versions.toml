@@ -61,7 +61,10 @@ moko-graphics = "0.9.0"
 multiplatformSetting = "1.0.0-RC"
 # Decompose
 decompose = "1.0.0-beta-04"
+essenty = "0.10.0"
 [libraries]
+essenty-lifecycle = { module = "com.arkivanov.essenty:lifecycle", version.ref = "essenty" }
+essenty-parcelable = { module = "com.arkivanov.essenty:parcelable", version.ref = "essenty" }
 # Decompose
 decompose-core = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
 decompose-compose-jetpack = { module = "com.arkivanov.decompose:extensions-compose-jetpack", version.ref = "decompose" }
