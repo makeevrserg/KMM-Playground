@@ -12,7 +12,7 @@ plugins {
 }
 
 kotlin {
-    jvm {
+    jvm("jvm") {
         compilations.all {
             kotlinOptions.jvmTarget = "11"
         }

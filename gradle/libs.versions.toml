@@ -59,8 +59,14 @@ moko-mvvm = "0.14.0"
 moko-graphics = "0.9.0"
 # KMM
 multiplatformSetting = "1.0.0-RC"
-decompose = "1.0.0-alpha-06"
+# Decompose
+decompose = "1.0.0-beta-04"
 [libraries]
+# Decompose
+decompose-core = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
+decompose-compose-jetpack = { module = "com.arkivanov.decompose:extensions-compose-jetpack", version.ref = "decompose" }
+decompose-compose-jetbrains = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "decompose" }
+decompose-android = { module = "com.arkivanov.decompose:extensions-android", version.ref = "decompose" }
 # Kotlin
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-version" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }

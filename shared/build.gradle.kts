@@ -33,6 +33,8 @@ kotlin {
                 // MobileX
                 implementation(libs.mobileX.uitext.core)
                 implementation(libs.mobileX.uitext.mr)
+                // Decompose
+                implementation(libs.decompose.core)
             }
         }
         val androidMain by getting {

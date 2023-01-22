@@ -4,7 +4,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 
 plugins {
-    id("kmm-jvm")
     kotlin("multiplatform")
     id("org.jetbrains.compose")
 }
@@ -16,11 +15,13 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 // Compose
-                implementation(project(":shared-ui"))
                 implementation(compose.desktop.currentOs)
-                // Navigation
-                implementation("com.arkivanov.decompose:decompose:${libs.versions.decompose.get()}")
-                implementation("com.arkivanov.decompose:extensions-compose-jetbrains:${libs.versions.decompose.get()}")
+                // Decompose
+                implementation(libs.decompose.core)
+                implementation(libs.decompose.compose.jetbrains)
+                // Local
+                implementation(project(":shared-ui"))
+                implementation(project(":shared"))
             }
         }
     }
