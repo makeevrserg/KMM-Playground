@@ -39,6 +39,10 @@ kotlin {
                 // Decompose
                 api(libs.decompose.core)
                 api(libs.essenty.lifecycle)
+                // MVIKotlin
+                api(libs.mvikotlin.core)
+                api(libs.mvikotlin.main)
+                api(libs.mvikotlin.extensions.coroutines)
             }
         }
         val androidMain by getting {

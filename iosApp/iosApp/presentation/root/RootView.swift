@@ -53,23 +53,5 @@ struct SelectionView: View {
     }
 }
 
-private struct ChildView: View {
-    let child: RootComponentChild
-    let root: RootComponent
-    
-    var body: some View {
-        switch child {
-        case let child as RootComponentChild.RickMortyChild: CustomView(text: "RickMorty")
-        case let child as RootComponentChild.SampleScreen: CustomView(text: "Sample")
-        case let child as RootComponentChild.ScreenSelectionChild: SelectionView(root)
-        default: EmptyView()
-        }
-    }
-}
 
-struct CustomView: View{
-    let text: String
-    var body: some View{
-        Text(text)
-    }
-}
+
