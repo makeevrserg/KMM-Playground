@@ -11,6 +11,9 @@ plugins {
 }
 
 kotlin {
+    android {
+        apply(plugin = "kotlin-parcelize")
+    }
     cocoapods.framework {
         baseName = "shared"
         isStatic = false

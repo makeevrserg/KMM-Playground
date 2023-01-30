@@ -6,7 +6,7 @@ application-compileSdk = "33"
 application-minSdk = "21"
 application-targetSdk = "33"
 # Kotlin
-kotlin-version = "1.7.20"
+kotlin-version = "1.7.10"
 kotlin-coroutines = "1.6.3"
 kotlin-compilerExtensionVersion = "1.3.0"
 kotlin-android-application = "7.2.2"

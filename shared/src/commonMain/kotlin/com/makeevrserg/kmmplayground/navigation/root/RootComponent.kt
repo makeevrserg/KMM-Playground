@@ -15,17 +15,13 @@ interface RootComponent {
     fun onShowRickMortyClicked()
     fun showCalculator()
 
-    sealed interface Child : Parcelable {
-        @Parcelize
+    sealed interface Child {
         class ScreenSelector(val component: RootComponent) : Child
 
-        @Parcelize
         class RickAndMorty(val component: RickMortyComponent) : Child
 
-        @Parcelize
         class SampleScreen(val component: RootComponent) : Child
 
-        @Parcelize
         class Calculator(val component: CalculatorComponent) : Child
     }
 }

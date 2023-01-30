@@ -11,11 +11,9 @@ interface RickMortyComponent {
 
     fun popComponent()
     fun onCharacterClicked(id: Long)
-    sealed interface Child : Parcelable {
-        @Parcelize
+    sealed interface Child {
         object CharacterList : Child
 
-        @Parcelize
         class CharacterDetail(val id: Long) : Child
     }
 }
