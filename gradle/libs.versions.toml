@@ -57,11 +57,22 @@ moko-mvvm = "0.15.0"
 moko-graphics = "0.9.0"
 # KMM
 multiplatformSetting = "1.0.0-RC"
+# Linters
+detekt = "1.22.0" # https://detekt.dev/docs/gettingstarted/gradle/
+detekt-ruleset-compiler = "0.0.2" # https://github.com/BraisGabin/detekt-compiler-rules/releases
+detekt-ruleset-ktlint = "0.48.0" # https://github.com/pinterest/ktlint/releases
+detekt-ruleset-twitter-compose = "0.0.26" # https://github.com/twitter/compose-rules/releases
 # Decompose
 decompose = "1.0.0"
 essenty = "1.0.0"
 mvikotlin = "3.1.0"
 [libraries]
+# Linters
+detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+detekt-ruleset-compiler = { module = "com.braisgabin.detekt:kotlin-compiler-wrapper", version.ref = "detekt-ruleset-compiler" }
+detekt-ruleset-ktlint = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+detekt-ruleset-twitter-compose = { module = "com.twitter.compose.rules:detekt", version.ref = "detekt-ruleset-twitter-compose" }
+# MVI
 mvikotlin-core = { module = "com.arkivanov.mvikotlin:mvikotlin", version.ref = "mvikotlin" }
 mvikotlin-main = { module = "com.arkivanov.mvikotlin:mvikotlin-main", version.ref = "mvikotlin" }
 mvikotlin-extensions-coroutines = { module = "com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines", version.ref = "mvikotlin" }

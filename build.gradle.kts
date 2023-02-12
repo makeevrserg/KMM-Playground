@@ -14,6 +14,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.moko.kswift) apply false
     alias(libs.plugins.kotlin.jbcompose) apply false
+    id("lint-convention")
 }
 
 tasks.register("cleanX", Delete::class) {
