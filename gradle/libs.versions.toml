@@ -48,7 +48,7 @@ coil = "2.0.0-rc03"
 # Koin
 koin = "3.2.2"
 # MobileX
-mobileX = "2.1.0-l48"
+mobileX = "2.5.0"
 # Compose
 kotlin-compose = "1.2.0"
 # Moko
@@ -60,7 +60,7 @@ moko-graphics = "0.9.0"
 # KMM
 multiplatformSetting = "1.0.0-RC"
 # Decompose
-decompose = "1.0.0-beta-04"
+decompose = "1.0.0"
 essenty = "0.10.0"
 mvikotlin = "3.1.0"
 [libraries]
@@ -133,19 +133,16 @@ koin-androidx-workmanager = { module = "io.insert-koin:koin-androidx-workmanager
 koin-androidx-navigation = { module = "io.insert-koin:koin-androidx-navigation", version.ref = "koin" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 # MobileX
-mobileX-core-android = { module = "ru.astrainteractive.mobilex:android-core", version.ref = "mobileX" }
-mobileX-core-compose = { module = "ru.astrainteractive.mobilex:core-compose", version.ref = "mobileX" }
+mobileX-serviceLocator = { module = "ru.astrainteractive.mobilex:service-locator", version.ref = "mobileX" }
 mobileX-core-ktx = { module = "ru.astrainteractive.mobilex:ktx-core", version.ref = "mobileX" }
-mobileX-uitext-core = { module = "ru.astrainteractive.mobilex:uitext-core", version.ref = "mobileX" }
-mobileX-uitext-mr = { module = "ru.astrainteractive.mobilex:uitext-mr", version.ref = "mobileX" }
-mobileX-uitext-compose = { module = "ru.astrainteractive.mobilex:uitext-compose", version.ref = "mobileX" }
+mobileX-paging = { module = "ru.astrainteractive.mobilex:paging", version.ref = "mobileX" }
 # Other
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 # Moko
 moko-generator-network = { module = "dev.icerock.moko:network-generator", version.ref = "moko-generator-network" }
 moko-generator-resources = { module = "dev.icerock.moko:resources-generator", version.ref = "moko-generator-resource" }
 moko-mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko-mvvm" }
-moko-mvvm-flow = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko-mvvm" }
+moko-mvvm-flow = { module = "dev.icerock.moko:mvvm-flow", version.ref = "moko-mvvm" }
 moko-resources-core = { module = "dev.icerock.moko:resources", version.ref = "moko-generator-resource" }
 moko-resources-compose = { module = "dev.icerock.moko:resources-compose", version.ref = "moko-generator-resource" }
 moko-graphics = { module = "dev.icerock.moko:graphics", version.ref = "moko-graphics" }

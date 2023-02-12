@@ -8,6 +8,7 @@ plugins {
     kotlin("native.cocoapods")
     id("dev.icerock.mobile.multiplatform-resources")
     id("dev.icerock.moko.kswift")
+    kotlin("plugin.serialization")
 }
 
 kotlin {
@@ -17,10 +18,13 @@ kotlin {
     cocoapods.framework {
         baseName = "shared"
         isStatic = false
+        // Moko
         export(libs.moko.mvvm.core)
         export(libs.moko.mvvm.flow)
+        // Resources
         export(libs.moko.resources.core)
         export(libs.moko.graphics)
+        // KSwift
         export(libs.moko.kswift)
         // Decompose
         export(libs.decompose.core)
@@ -37,8 +41,10 @@ kotlin {
                 api(libs.moko.resources.core)
                 api(libs.moko.kswift)
                 // MobileX
-                implementation(libs.mobileX.uitext.core)
-                implementation(libs.mobileX.uitext.mr)
+                implementation(libs.mobileX.serviceLocator)
+                implementation(libs.mobileX.core.ktx)
+                // Serialization
+                implementation(libs.kotlin.serialization.json)
                 // Decompose
                 api(libs.decompose.core)
                 api(libs.essenty.lifecycle)

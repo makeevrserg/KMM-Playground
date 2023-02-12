@@ -14,11 +14,13 @@ struct ChildView: View {
     let root: RootComponent
     
     var body: some View {
-        switch child {
-        case let child as RootComponentChild.RickMortyChild: Text("RM")
-        case let child as RootComponentChild.SampleScreen: SampleView(root)
-        case let child as RootComponentChild.ScreenSelectionChild: SelectionView(root)
-        default: EmptyView()
+        switch child{
+        case let child as RootComponentChildCalculator: CounterView(component: child.component)
+        case let child as RootComponentChildSampleScreen: SampleView(root)
+        case let child as RootComponentChildScreenSelector: ScreenSelectorView(child: child, root: root)
+        case let child as RootComponentChildGlavContact: GlavContactView(viewModel: child.viewModel)
+        case let child as RootComponentChildRickAndMorty: Text("Rick and morty")
+        default: Text("None")
         }
     }
 }

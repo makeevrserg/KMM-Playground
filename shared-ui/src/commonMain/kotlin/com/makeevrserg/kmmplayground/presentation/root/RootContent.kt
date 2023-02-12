@@ -1,7 +1,6 @@
 package com.makeevrserg.kmmplayground.presentation.root
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -10,9 +9,8 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.slid
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
 import com.makeevrserg.kmmplayground.presentation.sample.SampleScreen
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
-import com.makeevrserg.kmmplayground.navigation.rick_morty.DefaultRickMortyComponent
-import com.makeevrserg.kmmplayground.navigation.rick_morty.RickMortyComponent
-import com.makeevrserg.kmmplayground.navigation.root.RootComponent
+import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
+import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.presentation.calculator.CalculatorScreen
 import com.makeevrserg.kmmplayground.presentation.screen_selector.ScreenSelectorScreen
 
@@ -26,10 +24,10 @@ fun RootContent(component: RootComponent, modifier: Modifier = Modifier) {
             animation = stackAnimation(slide()),
         ) {
             when (val child = it.instance) {
-                is RootComponent.Child.RickAndMorty -> RickMortyRootContent(child.component)
-                is RootComponent.Child.ScreenSelector -> ScreenSelectorScreen(child.component)
-                is RootComponent.Child.SampleScreen -> SampleScreen(child.component)
-                is RootComponent.Child.Calculator -> CalculatorScreen(child.component)
+                is RootConfiguration.Calculator -> CalculatorScreen(child.component, child.viewModel)
+                is RootConfiguration.RickAndMorty -> RickMortyRootContent(child.component)
+                is RootConfiguration.SampleScreen -> SampleScreen(child.component, child.greeting)
+                is RootConfiguration.ScreenSelector -> ScreenSelectorScreen(child.component)
             }
         }
     }

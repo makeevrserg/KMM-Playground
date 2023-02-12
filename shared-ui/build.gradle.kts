@@ -13,10 +13,6 @@ kotlin {
                 implementation(compose.material)
                 implementation(compose.materialIconsExtended)
                 implementation(compose.runtime)
-                // MobileX
-                implementation(libs.mobileX.uitext.core)
-                implementation(libs.mobileX.uitext.mr)
-                implementation(libs.mobileX.uitext.compose)
                 // Decompose
                 implementation(libs.decompose.core)
                 implementation(libs.decompose.compose.jetbrains)
@@ -25,7 +21,13 @@ kotlin {
             }
         }
 
-        val androidMain by getting
+        val androidMain by getting {
+            dependencies {
+                // Compose
+                implementation("androidx.compose.ui:ui:1.2.1")
+                implementation("androidx.compose.foundation:foundation:1.2.1")
+            }
+        }
         val jvmMain by getting {
             dependencies {
                 // Compose

@@ -25,7 +25,9 @@ struct RootView: View{
     var body: some View {
         StackView(
             stackValue: childStack,
-            getTitle: { $0.description },
+            getTitle: { child in
+                "Title"
+            },
             onBack: root.pop,
             childContent: { c in
                 ChildView(child: c,root: root)
@@ -33,25 +35,4 @@ struct RootView: View{
         )
     }
 }
-
-struct SelectionView: View {
-    private let root: RootComponent
-    
-    init(_ root: RootComponent) {
-        self.root = root
-    }
-    
-    var body: some View {
-        VStack(alignment: .center, spacing: 8) {
-            Button("Open rick and morty", action: root.onRickMortyClicked)
-
-            Button("Open sample", action: root.onSampleClicked)
-            
-            Button("Replace with sample", action: root.onReplaceSampleClicked)
-        }
-        .navigationBarTitle("Selection screen", displayMode: .inline)
-    }
-}
-
-
 

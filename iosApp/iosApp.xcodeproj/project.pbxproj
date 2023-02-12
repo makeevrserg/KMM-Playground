@@ -12,6 +12,8 @@
 		A8109D19297D821D003D0712 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8109D18297D821D003D0712 /* StackView.swift */; };
 		A8109D1B297D875E003D0712 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8109D1A297D875E003D0712 /* ChildView.swift */; };
 		A8109D1E297D87BD003D0712 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8109D1D297D87BD003D0712 /* SampleView.swift */; };
+		A813395129893C6C0031FDF9 /* ScreenSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813395029893C6C0031FDF9 /* ScreenSelectorView.swift */; };
+		A813395429893D400031FDF9 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813395329893D400031FDF9 /* CounterView.swift */; };
 		A84D9D77297D798A00BA1DC6 /* iosAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D76297D798A00BA1DC6 /* iosAppApp.swift */; };
 		A84D9D79297D798A00BA1DC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D78297D798A00BA1DC6 /* ContentView.swift */; };
 		A84D9D7B297D798C00BA1DC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A84D9D7A297D798C00BA1DC6 /* Assets.xcassets */; };
@@ -22,6 +24,9 @@
 		A84D9D94297D7A1B00BA1DC6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D8C297D7A1B00BA1DC6 /* RootView.swift */; };
 		A84D9D96297D7A1B00BA1DC6 /* StoryBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D90297D7A1B00BA1DC6 /* StoryBoardView.swift */; };
 		A84D9D99297D7A3F00BA1DC6 /* RootHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D98297D7A3F00BA1DC6 /* RootHolder.swift */; };
+		A8DC42D7298FC538009F5719 /* GlavContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC42D6298FC538009F5719 /* GlavContactView.swift */; };
+		A8DC42DA298FCB25009F5719 /* MongoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A8DC42D9298FCB25009F5719 /* MongoSwift */; };
+		A8DC42DC298FCB25009F5719 /* MongoSwiftSync in Frameworks */ = {isa = PBXBuildFile; productRef = A8DC42DB298FCB25009F5719 /* MongoSwiftSync */; };
 		CB8574740826DA25FD42DD4E /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2FB99B60FA1F7B69CAE30E /* Pods_iosApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +36,8 @@
 		A8109D18297D821D003D0712 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		A8109D1A297D875E003D0712 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
 		A8109D1D297D87BD003D0712 /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		A813395029893C6C0031FDF9 /* ScreenSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSelectorView.swift; sourceTree = "<group>"; };
+		A813395329893D400031FDF9 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		A84D9D73297D798A00BA1DC6 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84D9D76297D798A00BA1DC6 /* iosAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosAppApp.swift; sourceTree = "<group>"; };
 		A84D9D78297D798A00BA1DC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +49,7 @@
 		A84D9D8C297D7A1B00BA1DC6 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		A84D9D90297D7A1B00BA1DC6 /* StoryBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoardView.swift; sourceTree = "<group>"; };
 		A84D9D98297D7A3F00BA1DC6 /* RootHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHolder.swift; sourceTree = "<group>"; };
+		A8DC42D6298FC538009F5719 /* GlavContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlavContactView.swift; sourceTree = "<group>"; };
 		C96AC21C0B20836276638E2C /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E2EFF7295FACA602DE9ED3C2 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,8 +59,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8DC42DC298FCB25009F5719 /* MongoSwiftSync in Frameworks */,
 				CB8574740826DA25FD42DD4E /* Pods_iosApp.framework in Frameworks */,
 				A8109D15297D7F73003D0712 /* XNavigation in Frameworks */,
+				A8DC42DA298FCB25009F5719 /* MongoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +92,22 @@
 				A8109D1D297D87BD003D0712 /* SampleView.swift */,
 			);
 			path = sample;
+			sourceTree = "<group>";
+		};
+		A813394F29893C5D0031FDF9 /* selection */ = {
+			isa = PBXGroup;
+			children = (
+				A813395029893C6C0031FDF9 /* ScreenSelectorView.swift */,
+			);
+			path = selection;
+			sourceTree = "<group>";
+		};
+		A813395229893D370031FDF9 /* counter */ = {
+			isa = PBXGroup;
+			children = (
+				A813395329893D400031FDF9 /* CounterView.swift */,
+			);
+			path = counter;
 			sourceTree = "<group>";
 		};
 		A84D9D6A297D798A00BA1DC6 = {
@@ -134,6 +160,9 @@
 		A84D9D86297D7A1B00BA1DC6 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A8DC42D5298FC52B009F5719 /* gc */,
+				A813395229893D370031FDF9 /* counter */,
+				A813394F29893C5D0031FDF9 /* selection */,
 				A8109D1C297D87B4003D0712 /* sample */,
 				A84D9D87297D7A1B00BA1DC6 /* storyboard_main */,
 				A84D9D8B297D7A1B00BA1DC6 /* root */,
@@ -179,6 +208,14 @@
 			path = app;
 			sourceTree = "<group>";
 		};
+		A8DC42D5298FC52B009F5719 /* gc */ = {
+			isa = PBXGroup;
+			children = (
+				A8DC42D6298FC538009F5719 /* GlavContactView.swift */,
+			);
+			path = gc;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +236,8 @@
 			name = iosApp;
 			packageProductDependencies = (
 				A8109D14297D7F73003D0712 /* XNavigation */,
+				A8DC42D9298FCB25009F5719 /* MongoSwift */,
+				A8DC42DB298FCB25009F5719 /* MongoSwiftSync */,
 			);
 			productName = iosApp;
 			productReference = A84D9D73297D798A00BA1DC6 /* iosApp.app */;
@@ -230,6 +269,7 @@
 			mainGroup = A84D9D6A297D798A00BA1DC6;
 			packageReferences = (
 				A8109D13297D7F73003D0712 /* XCRemoteSwiftPackageReference "XNavigation" */,
+				A8DC42D8298FCB25009F5719 /* XCRemoteSwiftPackageReference "mongo-swift-driver" */,
 			);
 			productRefGroup = A84D9D74297D798A00BA1DC6 /* Products */;
 			projectDirPath = "";
@@ -308,9 +348,12 @@
 				A84D9D77297D798A00BA1DC6 /* iosAppApp.swift in Sources */,
 				A84D9D92297D7A1B00BA1DC6 /* ViewController.swift in Sources */,
 				A84D9D99297D7A3F00BA1DC6 /* RootHolder.swift in Sources */,
+				A813395429893D400031FDF9 /* CounterView.swift in Sources */,
 				A84D9D91297D7A1B00BA1DC6 /* ObservableValue.swift in Sources */,
 				A84D9D94297D7A1B00BA1DC6 /* RootView.swift in Sources */,
 				A8109D19297D821D003D0712 /* StackView.swift in Sources */,
+				A813395129893C6C0031FDF9 /* ScreenSelectorView.swift in Sources */,
+				A8DC42D7298FC538009F5719 /* GlavContactView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -432,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -448,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
@@ -478,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
@@ -534,6 +579,14 @@
 				kind = branch;
 			};
 		};
+		A8DC42D8298FCB25009F5719 /* XCRemoteSwiftPackageReference "mongo-swift-driver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mongodb/mongo-swift-driver";
+			requirement = {
+				kind = exactVersion;
+				version = 1.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -541,6 +594,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A8109D13297D7F73003D0712 /* XCRemoteSwiftPackageReference "XNavigation" */;
 			productName = XNavigation;
+		};
+		A8DC42D9298FCB25009F5719 /* MongoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8DC42D8298FCB25009F5719 /* XCRemoteSwiftPackageReference "mongo-swift-driver" */;
+			productName = MongoSwift;
+		};
+		A8DC42DB298FCB25009F5719 /* MongoSwiftSync */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8DC42D8298FCB25009F5719 /* XCRemoteSwiftPackageReference "mongo-swift-driver" */;
+			productName = MongoSwiftSync;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

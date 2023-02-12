@@ -5,7 +5,9 @@ import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.core.store.create
 import com.arkivanov.mvikotlin.extensions.coroutines.coroutineExecutorFactory
 
-fun CalculatorStore(storeFactory: StoreFactory): Store<CalculatorIntent, CalculatorState, CalculatorLabel> {
+typealias CalculatorStore = Store<CalculatorIntent, CalculatorState, CalculatorLabel>
+
+fun CalculatorStore(storeFactory: StoreFactory): CalculatorStore {
     return storeFactory.create<CalculatorIntent, Unit, CalculatorIntent, CalculatorState, CalculatorLabel>(
         name = "CalculatorStore",
         initialState = CalculatorState(),

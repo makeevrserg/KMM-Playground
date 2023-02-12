@@ -4,10 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.lightColors
 import com.arkivanov.decompose.defaultComponentContext
-import com.makeevrserg.kmmplayground.navigation.root.DefaultRootComponent
+import com.makeevrserg.kmmplayground.navigation.root.component.DefaultRootComponent
 import com.makeevrserg.kmmplayground.presentation.root.RootContent
-import com.makeevrserg.kmmplayground.presentation.sample.SampleScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
         val componentContext = defaultComponentContext()
         val rootComponent = DefaultRootComponent(componentContext)
         setContent {
-            MaterialTheme {
+            MaterialTheme(lightColors()) {
                 RootContent(rootComponent)
             }
         }

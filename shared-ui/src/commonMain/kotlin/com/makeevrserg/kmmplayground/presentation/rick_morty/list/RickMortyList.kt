@@ -7,10 +7,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.makeevrserg.kmmplayground.navigation.rick_morty.RickMortyComponent
+import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 
 @Composable
-fun RickMortyList(component: RickMortyComponent) {
+fun RickMortyList(component: RootComponent) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
