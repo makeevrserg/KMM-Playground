@@ -1,4 +1,4 @@
-package com.makeevrserg.kmmplayground.presentation.calculator
+package com.makeevrserg.kmmplayground.presentation.counter
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -9,7 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.router.stack.pop
-import com.makeevrserg.kmmplayground.presentation.calculator.store.CounterIntent
+import com.makeevrserg.kmmplayground.presentation.counter.store.CounterIntent
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.shared.BackToolBar
 

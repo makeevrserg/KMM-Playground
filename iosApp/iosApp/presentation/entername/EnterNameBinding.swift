@@ -1,5 +1,5 @@
 //
-//  CounterBinding.swift
+//  EnterNameBinding.swift
 //  iosApp
 //
 //  Created by Roman Makeev on 12.02.2023.
@@ -12,14 +12,16 @@ import Combine
 import mokoMvvmFlowSwiftUI
 
 
-extension CounterViewModel {
-    var countState: String {
+extension EnterNameViewModel {
+    var state: EnterNameState {
         get {
             return self.state(
-                \.stateFlow,
+                \.enterNameState,
                 equals: { $0 === $1 },
-                 mapper: { state in state.value.description }
+                 mapper: { state in state }
             )
         }
     }
+
+   
 }

@@ -48,7 +48,7 @@ coil = "2.0.0-rc03"
 # Koin
 koin = "3.2.2"
 # MobileX
-mobileX = "2.5.0"
+mobileX = "2.5.1"
 # Moko
 moko-kswift = "0.6.1"
 moko-generator-network = "0.19.0"

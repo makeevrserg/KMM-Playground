@@ -12,18 +12,18 @@ import mokoMvvmFlowSwiftUI
 
 struct CounterView: View {
     let root: CNavigationComponent<RootScreen, RootConfiguration>
-    let child: RootConfigurationCalculator
-    @ObservedObject var viewModel: CalculatorViewModel
+    let child: RootConfigurationCounter
+    @ObservedObject var viewModel: CounterViewModel
     
     var body: some View {
         Group{
             
             Text(viewModel.countState)
             Button("+"){
-                viewModel.acceptCalculator(intent: CalculatorIntentIncrement())
+                viewModel.acceptCalculator(intent: CounterIntentIncrement())
             }
             Button("-"){
-                viewModel.acceptCalculator(intent: CalculatorIntentDecrement())
+                viewModel.acceptCalculator(intent: CounterIntentDecrement())
                 
             }
         }

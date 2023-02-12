@@ -1,4 +1,4 @@
-package com.makeevrserg.kmmplayground.presentation.calculator.store
+package com.makeevrserg.kmmplayground.presentation.counter.store
 
 import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory

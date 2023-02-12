@@ -5,10 +5,11 @@ import com.arkivanov.decompose.router.stack.*
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.instancekeeper.getOrCreate
 import com.makeevrserg.kmmplayground.di.ServiceLocator
-import com.makeevrserg.kmmplayground.presentation.calculator.CounterViewModel
+import com.makeevrserg.kmmplayground.presentation.counter.CounterViewModel
 import com.makeevrserg.kmmplayground.navigation.core.cNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.RootScreen
+import com.makeevrserg.kmmplayground.presentation.entername.EnterNameViewModel
 import com.makeevrserg.mobile.di_container.getValue
 
 class DefaultRootComponent(
@@ -16,6 +17,7 @@ class DefaultRootComponent(
 ) : RootComponent, ComponentContext by componentContext {
     private val storeFactory by ServiceLocator.storeFactoryModule
     private val greeting by ServiceLocator.greetingModule
+    private val localStorageRepository by ServiceLocator.localStorageRepository
     override val navigationController: StackNavigation<RootScreen> = StackNavigation()
 
     private val stack = childStack(
@@ -35,8 +37,21 @@ class DefaultRootComponent(
                 }
 
                 RootScreen.RickAndMorty -> RootConfiguration.RickAndMorty(this.cNavigationComponent())
-                RootScreen.SampleScreen -> RootConfiguration.SampleScreen(this.cNavigationComponent(), greeting)
+                RootScreen.SampleScreen -> RootConfiguration.SampleScreen(
+                    this.cNavigationComponent(),
+                    greeting
+                )
+
                 RootScreen.ScreenSelector -> RootConfiguration.ScreenSelector(this.cNavigationComponent())
+                RootScreen.EnterName -> {
+                    val viewModel = context.instanceKeeper.getOrCreate {
+                        EnterNameViewModel(storeFactory, localStorageRepository)
+                    }
+                    RootConfiguration.EnterName(
+                        this.cNavigationComponent(),
+                        viewModel
+                    )
+                }
             }
         }
     )

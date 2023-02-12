@@ -1,16 +1,19 @@
 package com.makeevrserg.kmmplayground.navigation.root
 
 import com.makeevrserg.kmmplayground.sample.Greeting
-import com.makeevrserg.kmmplayground.presentation.calculator.CounterViewModel
+import com.makeevrserg.kmmplayground.presentation.counter.CounterViewModel
 import com.makeevrserg.kmmplayground.navigation.core.CNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
+import com.makeevrserg.kmmplayground.presentation.entername.EnterNameViewModel
 
 sealed interface RootConfiguration {
-    class ScreenSelector(val component: CNavigationComponent<RootScreen, RootConfiguration>) :
-        RootConfiguration
+    class ScreenSelector(
+        val component: CNavigationComponent<RootScreen, RootConfiguration>
+    ) : RootConfiguration
 
-    class RickAndMorty(val component: CNavigationComponent<RootScreen, RootConfiguration>) :
-        RootConfiguration
+    class RickAndMorty(
+        val component: CNavigationComponent<RootScreen, RootConfiguration>
+    ) : RootConfiguration
 
     class SampleScreen(
         val component: CNavigationComponent<RootScreen, RootConfiguration>,
@@ -21,4 +24,9 @@ sealed interface RootConfiguration {
         val component: RootComponent,
         val viewModel: CounterViewModel
     ) : RootConfiguration
+
+    class EnterName(
+        val component: RootComponent,
+        val viewModel: EnterNameViewModel
+    ): RootConfiguration
 }

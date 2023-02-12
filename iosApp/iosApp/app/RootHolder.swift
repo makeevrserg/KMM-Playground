@@ -14,7 +14,7 @@ class RootHolder : ObservableObject {
 
     init() {
         lifecycle = LifecycleRegistryKt.LifecycleRegistry()
-        
+        ServiceLocator.shared.platformConfigurationModule.initialize(value: PlatformConfiguration())
         let component = DefaultRootComponent(
             componentContext: DefaultComponentContext(
                 lifecycle: lifecycle,

@@ -1,13 +1,13 @@
-package com.makeevrserg.kmmplayground.presentation.calculator
+package com.makeevrserg.kmmplayground.presentation.counter
 
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.labels
 import com.arkivanov.mvikotlin.extensions.coroutines.stateFlow
 import com.makeevrserg.kmmplayground.SharedViewModel
-import com.makeevrserg.kmmplayground.presentation.calculator.store.CounterIntent
-import com.makeevrserg.kmmplayground.presentation.calculator.store.CounterLabel
-import com.makeevrserg.kmmplayground.presentation.calculator.store.CounterState
-import com.makeevrserg.kmmplayground.presentation.calculator.store.CounterStore
+import com.makeevrserg.kmmplayground.presentation.counter.store.CounterIntent
+import com.makeevrserg.kmmplayground.presentation.counter.store.CounterLabel
+import com.makeevrserg.kmmplayground.presentation.counter.store.CounterState
+import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStore
 import dev.icerock.moko.mvvm.flow.CFlow
 import dev.icerock.moko.mvvm.flow.CStateFlow
 import dev.icerock.moko.mvvm.flow.cFlow

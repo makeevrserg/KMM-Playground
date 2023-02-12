@@ -1,4 +1,4 @@
-package com.makeevrserg.kmmplayground.presentation.calculator.store
+package com.makeevrserg.kmmplayground.presentation.counter.store
 
 sealed interface CounterLabel {
     object OnIncremented : CounterLabel

@@ -18,6 +18,8 @@ kotlin {
                 // Decompose
                 implementation(libs.decompose.core)
                 implementation(libs.decompose.compose.jetbrains)
+                // MobileX
+                implementation(libs.mobileX.serviceLocator)
                 // Local
                 implementation(project(":shared-ui"))
                 implementation(project(":shared"))

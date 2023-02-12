@@ -19,22 +19,38 @@ fun ScreenSelectorScreen(component: RootComponent) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Button(onClick = {
-            component.navigationController.push(RootScreen.SampleScreen)
-        }, content = {
-                Text("Sample Screen")
-            })
-
-        Button(onClick = {
-            component.navigationController.push(RootScreen.RickAndMorty)
-        }, content = {
-                Text("RickMorty component")
-            })
-
-        Button(onClick = {
-            component.navigationController.push(RootScreen.Counter)
-        }, content = {
-                Text("Calculator")
-            })
+        ScreenSelectorButton(
+            component = component,
+            text = "Enter Name Screen",
+            screen = RootScreen.EnterName
+        )
+        ScreenSelectorButton(
+            component = component,
+            text = "Sample Screen",
+            screen = RootScreen.SampleScreen
+        )
+        ScreenSelectorButton(
+            component = component,
+            text = "RickMorty",
+            screen = RootScreen.RickAndMorty
+        )
+        ScreenSelectorButton(
+            component = component,
+            text = "Calculator",
+            screen = RootScreen.Counter
+        )
     }
+}
+
+@Composable
+private fun ScreenSelectorButton(
+    text: String,
+    component: RootComponent,
+    screen: RootScreen
+) {
+    Button(onClick = {
+        component.navigationController.push(screen)
+    }, content = {
+        Text(text)
+    })
 }

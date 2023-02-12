@@ -22,7 +22,12 @@ struct ScreenSelectorView: View {
                 
             }
             Button("Open counter"){
-                root.push(screen:RootScreenCalculator())
+                root.push(screen:RootScreenCounter())
+                
+            }
+            
+            Button("Open NameEntering"){
+                root.push(screen:RootScreenEnterName())
                 
             }
         }
