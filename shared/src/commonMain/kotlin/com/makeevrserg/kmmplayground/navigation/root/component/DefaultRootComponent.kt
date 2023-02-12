@@ -6,8 +6,6 @@ import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.instancekeeper.getOrCreate
 import com.makeevrserg.kmmplayground.di.ServiceLocator
 import com.makeevrserg.kmmplayground.navigation.calculator.CalculatorViewModel
-import com.makeevrserg.kmmplayground.navigation.calculator.store.CalculatorStore
-import com.makeevrserg.kmmplayground.navigation.core.NavigationComponent
 import com.makeevrserg.kmmplayground.navigation.core.cNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.RootScreen
@@ -59,5 +57,4 @@ class DefaultRootComponent(
     override fun push(screen: RootScreen) {
         navigationController.push(screen)
     }
-
 }

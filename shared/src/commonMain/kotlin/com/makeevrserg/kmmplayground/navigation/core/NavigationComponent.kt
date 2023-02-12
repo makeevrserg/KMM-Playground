@@ -13,4 +13,3 @@ interface NavigationComponent<SCREEN : Any, CONFIGURATION : Any> {
     fun replaceCurrent(screen: SCREEN)
     fun replaceAll(screen: SCREEN)
 }
-

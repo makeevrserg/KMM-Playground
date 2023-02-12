@@ -1,4 +1,4 @@
-package com.makeevrserg.kmmplayground.shared_ui
+package com.makeevrserg.kmmplayground.shared
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext

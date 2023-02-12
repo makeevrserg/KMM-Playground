@@ -4,7 +4,6 @@ import org.gradle.api.Project
 import java.io.InputStream
 import java.util.Properties
 
-
 object Application {
     const val APPLICATION_ID = "com.makeevrserg.kmmplayground"
     const val GROUP = "com.makeevrserg.kmmplayground"
@@ -14,9 +13,8 @@ object Application {
     const val COMPILE_SDK_VERSION = 33
     const val COMPILER_EXTENSION_VERSION = "1.3.0"
 
-    val VERSION_CODE = 10
-    val VERSION_NAME = "2.0.2"
-
+    const val VERSION_CODE = 10
+    const val VERSION_NAME = "2.0.2"
 
     val Project.KEY_ALIAS: String
         get() = Application.getCredential(this, "KEY_ALIAS")
@@ -41,5 +39,3 @@ object Application {
         return properties.getProperty(path)
     }
 }
-
-

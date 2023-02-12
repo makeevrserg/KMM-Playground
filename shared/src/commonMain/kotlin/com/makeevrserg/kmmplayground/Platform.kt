@@ -7,7 +7,7 @@ import dev.icerock.moko.resources.desc.StringDesc
 
 interface Platform {
     val name: String
-    fun sharedHelloWorldAsRaw(): StringDesc{
+    fun sharedHelloWorldAsRaw(): StringDesc {
         return StringDesc.Raw("Hello world")
     }
     fun sharedHelloWorldAsResource(): StringDesc {

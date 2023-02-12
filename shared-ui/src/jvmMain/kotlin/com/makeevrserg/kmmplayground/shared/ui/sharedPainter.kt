@@ -1,4 +1,4 @@
-package com.makeevrserg.kmmplayground.shared_ui.shared
+package com.makeevrserg.kmmplayground.shared.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.painter.Painter
@@ -7,5 +7,5 @@ import dev.icerock.moko.resources.ImageResource
 
 @Composable
 actual fun sharedPainter(imageResource: ImageResource): Painter {
-    return painterResource(imageResource.drawableResId)
+    return painterResource(imageResource.filePath)
 }

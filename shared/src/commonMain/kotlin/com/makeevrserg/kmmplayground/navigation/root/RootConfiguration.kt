@@ -1,10 +1,9 @@
 package com.makeevrserg.kmmplayground.navigation.root
 
 import com.makeevrserg.kmmplayground.Greeting
-import com.makeevrserg.kmmplayground.navigation.calculator.store.CalculatorStore
-import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.navigation.calculator.CalculatorViewModel
 import com.makeevrserg.kmmplayground.navigation.core.CNavigationComponent
+import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 
 sealed interface RootConfiguration {
     class ScreenSelector(val component: CNavigationComponent<RootScreen, RootConfiguration>) :

@@ -15,7 +15,7 @@ kotlin {
         }
     }
     android()
-    sourceSets{
+    sourceSets {
         val commonMain by getting
         val androidMain by getting
         val jvmMain by getting
@@ -44,5 +44,4 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-
 }

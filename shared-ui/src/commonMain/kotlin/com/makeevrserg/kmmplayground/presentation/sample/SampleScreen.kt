@@ -11,10 +11,10 @@ import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.router.stack.pop
 import com.makeevrserg.kmmplayground.Greeting
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
-import com.makeevrserg.kmmplayground.shared_ui.shared.sharedPainter
 import com.makeevrserg.kmmplayground.resources.MR
-import com.makeevrserg.kmmplayground.shared_ui.BackToolBar
-import  com.makeevrserg.kmmplayground.shared_ui.asComposableString
+import com.makeevrserg.kmmplayground.shared.BackToolBar
+import com.makeevrserg.kmmplayground.shared.asComposableString
+import com.makeevrserg.kmmplayground.shared.ui.sharedPainter
 
 @Composable
 fun SampleScreen(component: RootComponent, greeting: Greeting) {
@@ -28,8 +28,8 @@ fun SampleScreen(component: RootComponent, greeting: Greeting) {
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
-        ){
-            Text(greeting.greeting())
+        ) {
+            Text(greeting.getHelloWorld())
             Text(greeting.platform.sharedHelloWorldAsRaw().asComposableString())
             Text(greeting.platform.sharedHelloWorldAsResource().asComposableString())
             Image(sharedPainter(MR.images.logo), "")

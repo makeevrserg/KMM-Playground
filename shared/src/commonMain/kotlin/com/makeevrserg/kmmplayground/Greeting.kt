@@ -2,7 +2,7 @@ package com.makeevrserg.kmmplayground
 
 class Greeting(val platform: Platform) {
 
-    fun greeting(): String {
+    fun getHelloWorld(): String {
         return "Hello, ${platform.name}!"
     }
 }

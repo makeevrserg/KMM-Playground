@@ -6,7 +6,7 @@ buildscript {
 }
 
 plugins {
-    //trick: for the same plugin versions in all sub-modules
+    // trick: for the same plugin versions in all sub-modules
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
@@ -18,7 +18,7 @@ plugins {
 }
 
 tasks.register("cleanX", Delete::class) {
-    fun clearProject(project:Project){
+    fun clearProject(project: Project) {
         project.childProjects.values.forEach(::clearProject)
         delete(project.buildDir)
     }

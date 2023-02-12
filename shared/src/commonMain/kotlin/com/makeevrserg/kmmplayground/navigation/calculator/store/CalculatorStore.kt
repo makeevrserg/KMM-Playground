@@ -21,5 +21,6 @@ fun CalculatorStore(storeFactory: StoreFactory): CalculatorStore {
                 CalculatorIntent.Decrement -> copy(value - 1)
                 CalculatorIntent.Increment -> copy(value + 1)
             }
-        })
+        }
+    )
 }

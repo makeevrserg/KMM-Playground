@@ -9,7 +9,6 @@ import com.arkivanov.decompose.defaultComponentContext
 import com.makeevrserg.kmmplayground.navigation.root.component.DefaultRootComponent
 import com.makeevrserg.kmmplayground.presentation.root.RootContent
 
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

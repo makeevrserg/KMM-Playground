@@ -48,6 +48,13 @@ output-reports:
   # - 'XmlOutputReport'
   # - 'HtmlOutputReport'
   # - 'MdOutputReport'
+formatting:
+  MaximumLineLength:
+    maxLineLength: 200
+  PackageName:
+    active: false # TODO
+  Filename:
+    active: false # TODO
 
 comments:
   active: true
@@ -363,8 +370,8 @@ naming:
     propertyPattern: '[A-Za-z][_A-Za-z0-9]*'
     privatePropertyPattern: '(_)?[A-Za-z][_A-Za-z0-9]*'
   PackageNaming:
-    active: true
-    packagePattern: '[a-z]+(\.[a-z][A-Za-z0-9]*)*'
+    active: false
+    packagePattern: '[a-z]+(\.|\_[a-z][A-Za-z0-9]*)*'
   TopLevelPropertyNaming:
     active: true
     constantPattern: '[A-Z][_A-Z0-9]*'
@@ -591,7 +598,7 @@ style:
     maxChainedCalls: 5
   MaxLineLength:
     active: true
-    maxLineLength: 120
+    maxLineLength: 200
     excludePackageStatements: true
     excludeImportStatements: true
     excludeCommentStatements: false
@@ -684,7 +691,7 @@ style:
     active: true
   UnusedPrivateMember:
     active: true
-    allowedNames: '(_|ignored|expected|serialVersionUID|Composable.*Preview)'
+    allowedNames: '(_|ignored|iosMain|jvmMain|androidMain|commonMain|expected|serialVersionUID|Composable.*Preview)'
     ignoreAnnotated: [ 'Composable' ]
   UseAnyOrNoneInsteadOfFind:
     active: true

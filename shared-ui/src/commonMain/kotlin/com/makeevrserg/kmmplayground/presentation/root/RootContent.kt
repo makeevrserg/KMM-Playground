@@ -7,11 +7,11 @@ import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.Children
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.slide
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
-import com.makeevrserg.kmmplayground.presentation.sample.SampleScreen
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
 import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.presentation.calculator.CalculatorScreen
+import com.makeevrserg.kmmplayground.presentation.sample.SampleScreen
 import com.makeevrserg.kmmplayground.presentation.screen_selector.ScreenSelectorScreen
 
 @Composable

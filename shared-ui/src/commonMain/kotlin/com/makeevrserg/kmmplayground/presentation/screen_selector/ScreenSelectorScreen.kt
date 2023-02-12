@@ -22,19 +22,19 @@ fun ScreenSelectorScreen(component: RootComponent) {
         Button(onClick = {
             component.navigationController.push(RootScreen.SampleScreen)
         }, content = {
-            Text("Sample Screen")
-        })
+                Text("Sample Screen")
+            })
 
         Button(onClick = {
             component.navigationController.push(RootScreen.RickAndMorty)
         }, content = {
-            Text("RickMorty component")
-        })
+                Text("RickMorty component")
+            })
 
         Button(onClick = {
             component.navigationController.push(RootScreen.Calculator)
         }, content = {
-            Text("Calculator")
-        })
+                Text("Calculator")
+            })
     }
 }

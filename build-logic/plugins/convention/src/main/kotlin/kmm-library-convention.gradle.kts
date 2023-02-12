@@ -18,7 +18,7 @@ kotlin {
     iosX64()
     iosArm64()
     iosSimulatorArm64()
-    sourceSets{
+    sourceSets {
         val commonMain by getting
         val androidMain by getting
         val jvmMain by getting
