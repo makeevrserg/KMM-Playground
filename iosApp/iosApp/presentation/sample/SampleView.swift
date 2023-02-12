@@ -7,11 +7,11 @@
 
 import Foundation
 import SwiftUI
-import shared
+import MultiPlatformLibrary
 
 
 struct SampleView: View {
-    let root: RootComponent
+    let root: CNavigationComponent<RootScreen, RootConfiguration>
     let greeting: Greeting
     
     
@@ -23,9 +23,9 @@ struct SampleView: View {
                 let logoResource = MR.images().logo
                 Image(logoResource.assetImageName, bundle: logoResource.bundle).resizable().frame(width: 32.0, height: 32.0)
                 
-                Text(greet)
-                Text(greeting.platform.sharedHelloWorldAsRaw().asString())
-                Text(greeting.platform.sharedHelloWorldAsResource().asString())
+                
+                Text(greeting.platform.sharedHelloWorldAsRaw().localized())
+                Text(greeting.platform.sharedHelloWorldAsResource().localized())
             }
             .navigationBarTitle("First Tab", displayMode: .large)
   

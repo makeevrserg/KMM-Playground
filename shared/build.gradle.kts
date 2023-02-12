@@ -18,7 +18,7 @@ kotlin {
         ios.deploymentTarget = "14.1"
         podfile = project.file("../iosApp/Podfile")
         framework {
-            baseName = "shared"
+            baseName = "MultiPlatformLibrary"
             isStatic = false
             // Moko
             export(libs.moko.mvvm.core)
@@ -31,6 +31,8 @@ kotlin {
             // Decompose
             export(libs.decompose.core)
             export(libs.essenty.lifecycle)
+            // Local
+            export(project(":resources"))
         }
     }
 
@@ -56,7 +58,7 @@ kotlin {
                 api(libs.mvikotlin.main)
                 api(libs.mvikotlin.extensions.coroutines)
                 // Local
-                implementation(project(":resources"))
+                api(project(":resources"))
             }
         }
         val androidMain by getting {

@@ -8,6 +8,7 @@ import com.makeevrserg.kmmplayground.di.ServiceLocator
 import com.makeevrserg.kmmplayground.navigation.calculator.CalculatorViewModel
 import com.makeevrserg.kmmplayground.navigation.calculator.store.CalculatorStore
 import com.makeevrserg.kmmplayground.navigation.core.NavigationComponent
+import com.makeevrserg.kmmplayground.navigation.core.cNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.RootScreen
 import com.makeevrserg.mobile.di_container.getValue
@@ -35,13 +36,28 @@ class DefaultRootComponent(
                     )
                 }
 
-                RootScreen.RickAndMorty -> RootConfiguration.RickAndMorty(this)
-                RootScreen.SampleScreen -> RootConfiguration.SampleScreen(this, greeting)
-                RootScreen.ScreenSelector -> RootConfiguration.ScreenSelector(this)
+                RootScreen.RickAndMorty -> RootConfiguration.RickAndMorty(this.cNavigationComponent())
+                RootScreen.SampleScreen -> RootConfiguration.SampleScreen(this.cNavigationComponent(), greeting)
+                RootScreen.ScreenSelector -> RootConfiguration.ScreenSelector(this.cNavigationComponent())
             }
         }
     )
 
     override val childStack: Value<ChildStack<RootScreen, RootConfiguration>> = stack
+    override fun pop() {
+        navigationController.pop()
+    }
+
+    override fun replaceAll(screen: RootScreen) {
+        navigationController.replaceAll(screen)
+    }
+
+    override fun replaceCurrent(screen: RootScreen) {
+        navigationController.replaceCurrent(screen)
+    }
+
+    override fun push(screen: RootScreen) {
+        navigationController.push(screen)
+    }
 
 }

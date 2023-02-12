@@ -4,7 +4,7 @@ plugins {
 
 android {
     buildFeatures.compose = true
-    composeOptions.kotlinCompilerExtensionVersion = "1.3.0"
+    composeOptions.kotlinCompilerExtensionVersion = libs.versions.kotlin.compilerExtensionVersion.get()
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false

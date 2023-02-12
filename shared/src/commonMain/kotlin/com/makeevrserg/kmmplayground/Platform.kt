@@ -1,6 +1,6 @@
 package com.makeevrserg.kmmplayground
 
-import com.makeevrserg.kmmplayground.shared.MR
+import com.makeevrserg.kmmplayground.resources.MR
 import dev.icerock.moko.resources.desc.Raw
 import dev.icerock.moko.resources.desc.Resource
 import dev.icerock.moko.resources.desc.StringDesc

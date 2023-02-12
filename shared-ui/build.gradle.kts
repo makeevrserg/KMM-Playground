@@ -1,3 +1,4 @@
+import com.makeevrserg.kmmplayground.Application.APPLICATION_ID
 plugins {
     id("compose-library-convention")
     id("org.jetbrains.compose")
@@ -37,5 +38,5 @@ kotlin {
     }
 }
 android {
-    namespace = com.makeevrserg.kmmplayground.Application.APPLICATION_ID + ".shared_ui"
+    namespace = "$APPLICATION_ID.shared_ui"
 }

@@ -15,8 +15,8 @@ kotlin {
     }
 }
 android {
-    namespace = Application.APPLICATION_ID + ".shared"
+    namespace = Application.APPLICATION_ID + ".resources"
 }
 multiplatformResources {
-    multiplatformResourcesPackage = Application.APPLICATION_ID + ".shared"
+    multiplatformResourcesPackage = Application.APPLICATION_ID + ".resources"
 }

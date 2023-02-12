@@ -6,20 +6,24 @@
 //
 
 import SwiftUI
-import shared
+import MultiPlatformLibrary
 import Combine
-
+import mokoMvvmFlowSwiftUI
 
 struct CounterView: View {
+    let root: CNavigationComponent<RootScreen, RootConfiguration>
+    let child: RootConfigurationCalculator
+    @ObservedObject var viewModel: CalculatorViewModel
     
     var body: some View {
         Group{
             
-            Text("Hello")
+            Text(viewModel.countState)
             Button("+"){
-                
+                viewModel.acceptCalculator(intent: CalculatorIntentIncrement())
             }
             Button("-"){
+                viewModel.acceptCalculator(intent: CalculatorIntentDecrement())
                 
             }
         }

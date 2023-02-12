@@ -13,6 +13,7 @@
 		A8109D1E297D87BD003D0712 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8109D1D297D87BD003D0712 /* SampleView.swift */; };
 		A813395129893C6C0031FDF9 /* ScreenSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813395029893C6C0031FDF9 /* ScreenSelectorView.swift */; };
 		A813395429893D400031FDF9 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813395329893D400031FDF9 /* CounterView.swift */; };
+		A83EC2722998FD8A003952A7 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2FB99B60FA1F7B69CAE30E /* Pods_iosApp.framework */; };
 		A84D9D77297D798A00BA1DC6 /* iosAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D76297D798A00BA1DC6 /* iosAppApp.swift */; };
 		A84D9D79297D798A00BA1DC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D78297D798A00BA1DC6 /* ContentView.swift */; };
 		A84D9D7B297D798C00BA1DC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A84D9D7A297D798C00BA1DC6 /* Assets.xcassets */; };
@@ -23,7 +24,7 @@
 		A84D9D94297D7A1B00BA1DC6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D8C297D7A1B00BA1DC6 /* RootView.swift */; };
 		A84D9D96297D7A1B00BA1DC6 /* StoryBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D90297D7A1B00BA1DC6 /* StoryBoardView.swift */; };
 		A84D9D99297D7A3F00BA1DC6 /* RootHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D98297D7A3F00BA1DC6 /* RootHolder.swift */; };
-		CB8574740826DA25FD42DD4E /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2FB99B60FA1F7B69CAE30E /* Pods_iosApp.framework */; };
+		A854B9302999025A00513C31 /* CounterBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A854B92F2999025A00513C31 /* CounterBinding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		A84D9D8C297D7A1B00BA1DC6 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		A84D9D90297D7A1B00BA1DC6 /* StoryBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoardView.swift; sourceTree = "<group>"; };
 		A84D9D98297D7A3F00BA1DC6 /* RootHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHolder.swift; sourceTree = "<group>"; };
+		A854B92F2999025A00513C31 /* CounterBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterBinding.swift; sourceTree = "<group>"; };
 		C96AC21C0B20836276638E2C /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E2EFF7295FACA602DE9ED3C2 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB8574740826DA25FD42DD4E /* Pods_iosApp.framework in Frameworks */,
+				A83EC2722998FD8A003952A7 /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				A813395329893D400031FDF9 /* CounterView.swift */,
+				A854B92F2999025A00513C31 /* CounterBinding.swift */,
 			);
 			path = counter;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A854B9302999025A00513C31 /* CounterBinding.swift in Sources */,
 				A84D9D79297D798A00BA1DC6 /* ContentView.swift in Sources */,
 				A8109D1B297D875E003D0712 /* ChildView.swift in Sources */,
 				A84D9D96297D7A1B00BA1DC6 /* StoryBoardView.swift in Sources */,

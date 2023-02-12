@@ -1,10 +1,10 @@
 import SwiftUI
 import UIKit
-import shared
+import MultiPlatformLibrary
 
-struct StackView<T: AnyObject, Content: View>: View {
+struct StackView<K:AnyObject, T: AnyObject, Content: View>: View {
     @ObservedObject
-    var stackValue: ObservableValue<ChildStack<AnyObject, T>>
+    var stackValue: ObservableValue<ChildStack<K, T>>
 
     var getTitle: (T) -> String
     var onBack: () -> Void
@@ -12,7 +12,7 @@ struct StackView<T: AnyObject, Content: View>: View {
     @ViewBuilder
     var childContent: (T) -> Content
     
-    var stack: [Child<AnyObject, T>] { stackValue.value.items }
+    var stack: [Child<K, T>] { stackValue.value.items }
 
     var body: some View {
         if #available(iOS 16, *) {

@@ -5,7 +5,7 @@
 //  Created by Arkadii Ivanov on 13/05/2022.
 //
 import SwiftUI
-import shared
+import MultiPlatformLibrary
 
 public class ObservableValue<T : AnyObject> : ObservableObject {
     private let observableValue: Value<T>

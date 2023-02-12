@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import shared
+import MultiPlatformLibrary
 
 @main
 struct iosAppApp: App {

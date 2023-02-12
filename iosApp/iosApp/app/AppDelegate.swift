@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import shared
+import MultiPlatformLibrary
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     private var rootHolder: RootHolder?

@@ -12,7 +12,7 @@ import com.arkivanov.decompose.router.stack.pop
 import com.makeevrserg.kmmplayground.Greeting
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.shared_ui.shared.sharedPainter
-import com.makeevrserg.kmmplayground.shared.MR
+import com.makeevrserg.kmmplayground.resources.MR
 import com.makeevrserg.kmmplayground.shared_ui.BackToolBar
 import  com.makeevrserg.kmmplayground.shared_ui.asComposableString
 

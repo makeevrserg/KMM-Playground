@@ -6,16 +6,16 @@
 //
 
 import Foundation
-import shared
+import MultiPlatformLibrary
 
 class RootHolder : ObservableObject {
     let lifecycle: LifecycleRegistry
-    let root: RootComponent
+    let root: CNavigationComponent<RootScreen, RootConfiguration>
 
     init() {
         lifecycle = LifecycleRegistryKt.LifecycleRegistry()
-
-        root = DefaultRootComponent(
+        
+        let component = DefaultRootComponent(
             componentContext: DefaultComponentContext(
                 lifecycle: lifecycle,
                 stateKeeper: nil,
@@ -23,6 +23,7 @@ class RootHolder : ObservableObject {
                 backHandler: nil
             )
         )
+        root = CNavigationComponent(component: component)
 
         lifecycle.onCreate()
     }

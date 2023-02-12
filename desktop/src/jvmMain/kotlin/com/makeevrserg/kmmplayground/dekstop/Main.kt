@@ -3,6 +3,7 @@ package com.makeevrserg.kmmplayground.dekstop
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.window.*
 import com.arkivanov.decompose.DefaultComponentContext
@@ -21,12 +22,12 @@ fun main() {
     }
     application {
         val windowState = rememberWindowState()
-        LifecycleController(lifecycle,windowState)
+        LifecycleController(lifecycle, windowState)
         Window(
             state = windowState,
             title = "KMM-Playground",
             onCloseRequest = {}
-        ){
+        ) {
             Surface(Modifier.fillMaxSize()) {
                 MaterialTheme {
                     RootContent(root)

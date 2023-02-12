@@ -6,24 +6,23 @@
 //
 
 import SwiftUI
-import shared
+import MultiPlatformLibrary
 
 struct ScreenSelectorView: View {
-    let root: RootComponent
-    
+    let root: CNavigationComponent<RootScreen, RootConfiguration>
+    let child: RootConfigurationScreenSelector
     
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
             Button("Open rick and morty"){
-                
+                root.push(screen: RootScreenRickAndMorty())
             }
             Button("Open sample"){
+                root.push(screen: RootScreenSampleScreen())
                 
             }
             Button("Open counter"){
-                
-            }
-            Button("Open GC"){
+                root.push(screen:RootScreenCalculator())
                 
             }
         }
