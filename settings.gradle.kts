@@ -25,4 +25,5 @@ rootProject.name = "KMM-Playground"
 include(":androidApp")
 include(":desktop")
 include(":shared")
+include(":resources")
 include(":shared-ui")

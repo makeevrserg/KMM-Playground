@@ -13,9 +13,9 @@ struct RootView: View{
     private let root: RootComponent
     
     @ObservedObject
-    private var childStack: ObservableValue<ChildStack<AnyObject, RootComponentChild>>
+    private var childStack: ObservableValue<ChildStack<AnyObject, RootConfiguration>>
     
-    private var stack: ChildStack<AnyObject, RootComponentChild> { childStack.value }
+    private var stack: ChildStack<AnyObject, RootConfiguration> { childStack.value }
     
     init(_ root: RootComponent) {
         self.root = root
@@ -28,7 +28,9 @@ struct RootView: View{
             getTitle: { child in
                 "Title"
             },
-            onBack: root.pop,
+            onBack: {
+                root.navigationController.pop()
+            },
             childContent: { c in
                 ChildView(child: c,root: root)
             }

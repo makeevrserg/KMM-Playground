@@ -12,12 +12,9 @@ import shared
 
 struct SampleView: View {
     let root: RootComponent
-    let greeting = Greeting()
-    let greet = Greeting().greeting()
+    let greeting: Greeting
     
-    init(_ root: RootComponent) {
-        self.root = root
-    }
+    
 
 
     var body: some View {

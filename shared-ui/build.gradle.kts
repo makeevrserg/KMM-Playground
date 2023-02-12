@@ -1,6 +1,5 @@
 plugins {
-    id("kmm-android")
-    id("kmm-jvm")
+    id("compose-library-convention")
     id("org.jetbrains.compose")
 }
 kotlin {
@@ -18,6 +17,7 @@ kotlin {
                 implementation(libs.decompose.compose.jetbrains)
                 // Local
                 implementation(project(":shared"))
+                implementation(project(":resources"))
             }
         }
 
