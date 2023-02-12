@@ -9,13 +9,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.router.stack.pop
-import com.makeevrserg.kmmplayground.navigation.calculator.CalculatorViewModel
-import com.makeevrserg.kmmplayground.navigation.calculator.store.CalculatorIntent
+import com.makeevrserg.kmmplayground.presentation.calculator.store.CounterIntent
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.shared.BackToolBar
 
 @Composable
-fun CalculatorScreen(component: RootComponent, viewModel: CalculatorViewModel) {
+fun CounterScreen(component: RootComponent, viewModel: CounterViewModel) {
     val state by viewModel.stateFlow.collectAsState()
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -30,13 +29,13 @@ fun CalculatorScreen(component: RootComponent, viewModel: CalculatorViewModel) {
         ) {
             Text("Counter: ${state.value}")
             Button(onClick = {
-                viewModel.acceptCalculator(CalculatorIntent.Increment)
+                viewModel.acceptCalculator(CounterIntent.Increment)
             }, content = {
                     Text("Increment")
                 })
 
             Button(onClick = {
-                viewModel.acceptCalculator(CalculatorIntent.Decrement)
+                viewModel.acceptCalculator(CounterIntent.Decrement)
             }, content = {
                     Text("Decrement")
                 })

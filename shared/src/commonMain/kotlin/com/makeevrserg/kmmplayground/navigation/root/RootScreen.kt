@@ -14,5 +14,5 @@ sealed interface RootScreen : Parcelable {
     object SampleScreen : RootScreen
 
     @Parcelize
-    object Calculator : RootScreen
+    object Counter : RootScreen
 }

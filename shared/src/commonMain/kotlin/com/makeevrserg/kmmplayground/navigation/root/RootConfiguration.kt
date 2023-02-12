@@ -1,7 +1,7 @@
 package com.makeevrserg.kmmplayground.navigation.root
 
 import com.makeevrserg.kmmplayground.sample.Greeting
-import com.makeevrserg.kmmplayground.navigation.calculator.CalculatorViewModel
+import com.makeevrserg.kmmplayground.presentation.calculator.CounterViewModel
 import com.makeevrserg.kmmplayground.navigation.core.CNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 
@@ -17,8 +17,8 @@ sealed interface RootConfiguration {
         val greeting: Greeting
     ) : RootConfiguration
 
-    class Calculator(
+    class Counter(
         val component: RootComponent,
-        val viewModel: CalculatorViewModel
+        val viewModel: CounterViewModel
     ) : RootConfiguration
 }

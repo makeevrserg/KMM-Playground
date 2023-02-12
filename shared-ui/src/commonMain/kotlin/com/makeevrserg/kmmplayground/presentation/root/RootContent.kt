@@ -10,7 +10,7 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stac
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
 import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
-import com.makeevrserg.kmmplayground.presentation.calculator.CalculatorScreen
+import com.makeevrserg.kmmplayground.presentation.calculator.CounterScreen
 import com.makeevrserg.kmmplayground.presentation.sample.SampleScreen
 import com.makeevrserg.kmmplayground.presentation.screen_selector.ScreenSelectorScreen
 
@@ -24,7 +24,7 @@ fun RootContent(component: RootComponent, modifier: Modifier = Modifier) {
             animation = stackAnimation(slide()),
         ) {
             when (val child = it.instance) {
-                is RootConfiguration.Calculator -> CalculatorScreen(child.component, child.viewModel)
+                is RootConfiguration.Counter -> CounterScreen(child.component, child.viewModel)
                 is RootConfiguration.RickAndMorty -> RickMortyRootContent(child.component)
                 is RootConfiguration.SampleScreen -> SampleScreen(child.component, child.greeting)
                 is RootConfiguration.ScreenSelector -> ScreenSelectorScreen(child.component)

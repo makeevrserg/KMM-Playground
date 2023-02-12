@@ -32,7 +32,7 @@ fun ScreenSelectorScreen(component: RootComponent) {
             })
 
         Button(onClick = {
-            component.navigationController.push(RootScreen.Calculator)
+            component.navigationController.push(RootScreen.Counter)
         }, content = {
                 Text("Calculator")
             })

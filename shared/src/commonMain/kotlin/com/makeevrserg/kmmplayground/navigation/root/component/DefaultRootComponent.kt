@@ -5,7 +5,7 @@ import com.arkivanov.decompose.router.stack.*
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.instancekeeper.getOrCreate
 import com.makeevrserg.kmmplayground.di.ServiceLocator
-import com.makeevrserg.kmmplayground.navigation.calculator.CalculatorViewModel
+import com.makeevrserg.kmmplayground.presentation.calculator.CounterViewModel
 import com.makeevrserg.kmmplayground.navigation.core.cNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.RootScreen
@@ -24,11 +24,11 @@ class DefaultRootComponent(
         handleBackButton = true,
         childFactory = { config, context ->
             when (config) {
-                RootScreen.Calculator -> {
+                RootScreen.Counter -> {
                     val viewModel = context.instanceKeeper.getOrCreate {
-                        CalculatorViewModel(storeFactory)
+                        CounterViewModel(storeFactory)
                     }
-                    RootConfiguration.Calculator(
+                    RootConfiguration.Counter(
                         this,
                         viewModel
                     )
