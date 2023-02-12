@@ -6,12 +6,12 @@ application-compileSdk = "33"
 application-minSdk = "21"
 application-targetSdk = "33"
 # Kotlin
-kotlin-version = "1.7.10"
+kotlin-version = "1.8.0"
 kotlin-coroutines = "1.6.3"
-kotlin-compilerExtensionVersion = "1.3.0"
+kotlin-compilerExtensionVersion = "1.4.1"
 kotlin-android-application = "7.2.2"
-kotlin-serialization-json = "1.3.3"
-kotlin-jbcompose = "1.2.0"
+kotlin-serialization-json = "1.5.0-RC"
+kotlin-jbcompose = "1.3.0"
 # Androidx
 androidx-lifecycle = "2.5.1"
 androidx-lifecycle-ext = "2.2.0"
@@ -48,19 +48,30 @@ coil = "2.0.0-rc03"
 # Koin
 koin = "3.2.2"
 # MobileX
-mobileX = "2.1.0-l48"
-# Compose
-kotlin-compose = "1.2.2"
+mobileX = "2.5.0"
 # Moko
 moko-kswift = "0.6.1"
 moko-generator-network = "0.19.0"
 moko-generator-resource = "0.20.1"
-moko-mvvm = "0.14.0"
+moko-mvvm = "0.15.0"
 moko-graphics = "0.9.0"
 # KMM
 multiplatformSetting = "1.0.0-RC"
-decompose = "1.0.0-alpha-06"
+# Decompose
+decompose = "1.0.0"
+essenty = "1.0.0"
+mvikotlin = "3.1.0"
 [libraries]
+mvikotlin-core = { module = "com.arkivanov.mvikotlin:mvikotlin", version.ref = "mvikotlin" }
+mvikotlin-main = { module = "com.arkivanov.mvikotlin:mvikotlin-main", version.ref = "mvikotlin" }
+mvikotlin-extensions-coroutines = { module = "com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines", version.ref = "mvikotlin" }
+essenty-lifecycle = { module = "com.arkivanov.essenty:lifecycle", version.ref = "essenty" }
+essenty-parcelable = { module = "com.arkivanov.essenty:parcelable", version.ref = "essenty" }
+# Decompose
+decompose-core = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
+decompose-compose-jetpack = { module = "com.arkivanov.decompose:extensions-compose-jetpack", version.ref = "decompose" }
+decompose-compose-jetbrains = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "decompose" }
+decompose-android = { module = "com.arkivanov.decompose:extensions-android", version.ref = "decompose" }
 # Kotlin
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-version" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
@@ -120,19 +131,16 @@ koin-androidx-workmanager = { module = "io.insert-koin:koin-androidx-workmanager
 koin-androidx-navigation = { module = "io.insert-koin:koin-androidx-navigation", version.ref = "koin" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 # MobileX
-mobileX-core-android = { module = "ru.astrainteractive.mobilex:android-core", version.ref = "mobileX" }
-mobileX-core-compose = { module = "ru.astrainteractive.mobilex:core-compose", version.ref = "mobileX" }
+mobileX-serviceLocator = { module = "ru.astrainteractive.mobilex:service-locator", version.ref = "mobileX" }
 mobileX-core-ktx = { module = "ru.astrainteractive.mobilex:ktx-core", version.ref = "mobileX" }
-mobileX-uitext-core = { module = "ru.astrainteractive.mobilex:uitext-core", version.ref = "mobileX" }
-mobileX-uitext-mr = { module = "ru.astrainteractive.mobilex:uitext-mr", version.ref = "mobileX" }
-mobileX-uitext-compose = { module = "ru.astrainteractive.mobilex:uitext-compose", version.ref = "mobileX" }
+mobileX-paging = { module = "ru.astrainteractive.mobilex:paging", version.ref = "mobileX" }
 # Other
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 # Moko
 moko-generator-network = { module = "dev.icerock.moko:network-generator", version.ref = "moko-generator-network" }
 moko-generator-resources = { module = "dev.icerock.moko:resources-generator", version.ref = "moko-generator-resource" }
 moko-mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko-mvvm" }
-moko-mvvm-flow = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko-mvvm" }
+moko-mvvm-flow = { module = "dev.icerock.moko:mvvm-flow", version.ref = "moko-mvvm" }
 moko-resources-core = { module = "dev.icerock.moko:resources", version.ref = "moko-generator-resource" }
 moko-resources-compose = { module = "dev.icerock.moko:resources-compose", version.ref = "moko-generator-resource" }
 moko-graphics = { module = "dev.icerock.moko:graphics", version.ref = "moko-graphics" }
@@ -145,7 +153,7 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-ve
 kotlin-jbcompose = { id = "org.jetbrains.compose", version.ref = "kotlin-jbcompose" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin-version" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
-kotlin-compose = { id = "org.jetbrains.compose", version.ref = "kotlin-compose" }
+kotlin-compose = { id = "org.jetbrains.compose", version.ref = "kotlin-jbcompose" }
 android-library = { id = "com.android.application", version.ref = "kotlin-android-application" }
 android-application = { id = "com.android.library", version.ref = "kotlin-android-application" }
 moko-kswift = { id = "dev.icerock.moko.kswift", version.ref = "moko-kswift" }
