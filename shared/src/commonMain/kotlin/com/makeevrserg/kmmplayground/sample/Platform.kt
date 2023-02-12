@@ -1,4 +1,4 @@
-package com.makeevrserg.kmmplayground
+package com.makeevrserg.kmmplayground.sample
 
 import com.makeevrserg.kmmplayground.resources.MR
 import dev.icerock.moko.resources.desc.Raw

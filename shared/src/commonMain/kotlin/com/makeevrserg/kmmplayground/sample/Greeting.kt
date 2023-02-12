@@ -1,4 +1,4 @@
-package com.makeevrserg.kmmplayground
+package com.makeevrserg.kmmplayground.sample
 
 class Greeting(val platform: Platform) {
 

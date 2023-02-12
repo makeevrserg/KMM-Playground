@@ -1,6 +1,6 @@
 package com.makeevrserg.kmmplayground.navigation.root
 
-import com.makeevrserg.kmmplayground.Greeting
+import com.makeevrserg.kmmplayground.sample.Greeting
 import com.makeevrserg.kmmplayground.navigation.calculator.CalculatorViewModel
 import com.makeevrserg.kmmplayground.navigation.core.CNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent

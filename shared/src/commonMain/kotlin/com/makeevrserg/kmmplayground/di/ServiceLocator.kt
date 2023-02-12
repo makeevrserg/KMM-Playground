@@ -1,8 +1,8 @@
 package com.makeevrserg.kmmplayground.di
 
 import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
-import com.makeevrserg.kmmplayground.Greeting
-import com.makeevrserg.kmmplayground.getPlatform
+import com.makeevrserg.kmmplayground.sample.Greeting
+import com.makeevrserg.kmmplayground.sample.getPlatform
 import com.makeevrserg.mobile.di_container.getValue
 import com.makeevrserg.mobile.di_container.module
 

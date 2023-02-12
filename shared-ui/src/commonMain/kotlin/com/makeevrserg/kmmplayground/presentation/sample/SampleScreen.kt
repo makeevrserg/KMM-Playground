@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.router.stack.pop
-import com.makeevrserg.kmmplayground.Greeting
+import com.makeevrserg.kmmplayground.sample.Greeting
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.resources.MR
 import com.makeevrserg.kmmplayground.shared.BackToolBar

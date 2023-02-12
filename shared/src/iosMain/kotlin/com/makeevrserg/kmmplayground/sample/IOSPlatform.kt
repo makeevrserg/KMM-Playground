@@ -1,5 +1,6 @@
-package com.makeevrserg.kmmplayground
+package com.makeevrserg.kmmplayground.sample
 
+import com.makeevrserg.kmmplayground.sample.Platform
 import platform.UIKit.UIDevice
 
 class IOSPlatform : Platform {
