@@ -9,8 +9,10 @@ import com.makeevrserg.kmmplayground.presentation.counter.CounterViewModel
 import com.makeevrserg.kmmplayground.navigation.core.cNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.RootScreen
+import com.makeevrserg.kmmplayground.presentation.connection.ConnectionViewModel
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameViewModel
 import com.makeevrserg.mobile.di_container.getValue
+import com.makeevrserg.mobilex.ktx_core.platform.KDispatchers
 
 class DefaultRootComponent(
     componentContext: ComponentContext
@@ -26,6 +28,19 @@ class DefaultRootComponent(
         handleBackButton = true,
         childFactory = { config, context ->
             when (config) {
+                RootScreen.ConnectionScreen -> {
+                    val viewModel = context.instanceKeeper.getOrCreate {
+                        ConnectionViewModel(
+                            storeFactory = storeFactory,
+                            dispatchers = KDispatchers
+                        )
+                    }
+                    RootConfiguration.ConnectionScreen(
+                        component = this.cNavigationComponent(),
+                        viewModel = viewModel
+                    )
+                }
+
                 RootScreen.Counter -> {
                     val viewModel = context.instanceKeeper.getOrCreate {
                         CounterViewModel(storeFactory)

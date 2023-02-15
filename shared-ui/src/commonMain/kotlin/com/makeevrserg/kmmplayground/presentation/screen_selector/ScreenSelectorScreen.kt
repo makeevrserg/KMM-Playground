@@ -39,6 +39,12 @@ fun ScreenSelectorScreen(component: RootComponent) {
             text = "Calculator",
             screen = RootScreen.Counter
         )
+
+        ScreenSelectorButton(
+            component = component,
+            text = "Connection",
+            screen = RootScreen.ConnectionScreen
+        )
     }
 }
 

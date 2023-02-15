@@ -14,7 +14,7 @@ import com.makeevrserg.kmmplayground.presentation.counter.CounterScreen
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameScreen
 import com.makeevrserg.kmmplayground.presentation.sample.SampleScreen
 import com.makeevrserg.kmmplayground.presentation.screen_selector.ScreenSelectorScreen
-
+import com.makeevrserg.kmmplayground.presentation.connection.ConnectionScreenComponent
 @Composable
 fun RootContent(component: RootComponent, modifier: Modifier = Modifier) {
     val childStack by component.childStack.subscribeAsState()
@@ -30,6 +30,7 @@ fun RootContent(component: RootComponent, modifier: Modifier = Modifier) {
                 is RootConfiguration.SampleScreen -> SampleScreen(child.component, child.greeting)
                 is RootConfiguration.ScreenSelector -> ScreenSelectorScreen(child.component)
                 is RootConfiguration.EnterName -> EnterNameScreen(child.component, child.viewModel)
+                is RootConfiguration.ConnectionScreen -> ConnectionScreenComponent(child.component,child.viewModel)
             }
         }
     }

@@ -5,6 +5,9 @@ import com.arkivanov.essenty.parcelable.Parcelize
 
 sealed interface RootScreen : Parcelable {
     @Parcelize
+    object ConnectionScreen : RootScreen
+
+    @Parcelize
     object ScreenSelector : RootScreen
 
     @Parcelize
