@@ -9,21 +9,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.router.stack.pop
-import com.makeevrserg.kmmplayground.sample.Greeting
-import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
+import com.makeevrserg.kmmplayground.components.DefaultTopAppBar
 import com.makeevrserg.kmmplayground.resources.MR
+import com.makeevrserg.kmmplayground.sample.Greeting
 import com.makeevrserg.kmmplayground.shared.BackToolBar
 import com.makeevrserg.kmmplayground.shared.asComposableString
 import com.makeevrserg.kmmplayground.shared.ui.sharedPainter
 
 @Composable
-fun SampleScreen(component: RootComponent, greeting: Greeting) {
+internal fun SampleScreen(greeting: Greeting,onBackPressed: ()->Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        BackToolBar("Sample", component.navigationController::pop)
+        DefaultTopAppBar(text="Sample", onBackPressed = onBackPressed)
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,

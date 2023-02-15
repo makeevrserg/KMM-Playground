@@ -8,7 +8,7 @@ import androidx.compose.material.lightColors
 import com.arkivanov.decompose.defaultComponentContext
 import com.makeevrserg.kmmplayground.di.ServiceLocator
 import com.makeevrserg.kmmplayground.navigation.root.component.DefaultRootComponent
-import com.makeevrserg.kmmplayground.presentation.root.RootContent
+import com.makeevrserg.kmmplayground.presentation.root.RootContentComponent
 import com.makeevrserg.kmmplayground.shared.PlatformConfiguration
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         val rootComponent = DefaultRootComponent(componentContext)
         setContent {
             MaterialTheme(lightColors()) {
-                RootContent(rootComponent)
+                RootContentComponent(rootComponent)
             }
         }
     }

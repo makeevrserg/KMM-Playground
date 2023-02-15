@@ -9,29 +9,25 @@ import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
-import com.arkivanov.decompose.router.stack.pop
-import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
+import com.makeevrserg.kmmplayground.components.DefaultTopAppBar
 import com.makeevrserg.kmmplayground.presentation.entername.store.EnterNameIntent
 import com.makeevrserg.kmmplayground.presentation.entername.store.EnterNameState
-import com.makeevrserg.kmmplayground.shared.BackToolBar
 
 @Composable
-fun EnterNameScreen(
-    component: RootComponent,
-    viewModel: EnterNameViewModel
+internal fun EnterNameScreen(
+    state: EnterNameState,
+    onBackPressed: () -> Unit,
+    onIntent: (EnterNameIntent) -> Unit
 ) {
-    val state by viewModel.enterNameState.collectAsState()
     Column(
         Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        BackToolBar("EnterName", component.navigationController::pop)
+        DefaultTopAppBar(text = "EnterName", onBackPressed = onBackPressed)
         Column(
             Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
@@ -48,13 +44,13 @@ fun EnterNameScreen(
                         value = state.name,
                         enabled = !state.isLoading,
                         onValueChange = {
-                            EnterNameIntent.Entered(it).also(viewModel::acceptEnterName)
+                            EnterNameIntent.Entered(it).also(onIntent)
                         }
                     )
                     Button(
                         enabled = state.isButtonEnabled,
                         onClick = {
-                            EnterNameIntent.SaveValue.also(viewModel::acceptEnterName)
+                            EnterNameIntent.SaveValue.also(onIntent)
                         },
                         content = {
                             Text(
@@ -70,5 +66,4 @@ fun EnterNameScreen(
             }
         }
     }
-
 }

@@ -10,12 +10,7 @@ import androidx.compose.ui.Modifier
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 
 @Composable
-fun RickMortyList(component: RootComponent) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text("Character List")
-    }
+fun RMListScreenComponent(component: RootComponent) {
+
+    RMListScreen()
 }
