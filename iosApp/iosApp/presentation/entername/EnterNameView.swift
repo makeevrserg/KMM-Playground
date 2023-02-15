@@ -14,9 +14,12 @@ struct EnterNameView: View {
     let root: CNavigationComponent<RootScreen, RootConfiguration>
     let child: RootConfigurationEnterName
     @ObservedObject var viewModel: EnterNameViewModel
-    
+    init(root: CNavigationComponent<RootScreen, RootConfiguration>, child: RootConfigurationEnterName, viewModel: EnterNameViewModel) {
+        self.root = root
+        self.child = child
+        self.viewModel = viewModel
+    }
     var body: some View {
-        
         EnterNameContent(state: viewModel.state){ intent in
             viewModel.acceptEnterName(intent: intent)
         }
@@ -25,20 +28,13 @@ struct EnterNameView: View {
 private struct EnterNameContent: View{
     let state: EnterNameState
     let onIntent: (EnterNameIntent) -> Void
-    var nameBinding: Binding<String>{
-        Binding {
-            (self.state as? EnterNameStateLoaded)?.name ?? ""
-        } set: { value, _ in
-            onIntent(EnterNameIntentEntered(value: value))
-        }
-
-    }
 
     var body: some View {
         let stateKs = EnterNameStateKs(state)
         switch stateKs {
         case .loaded(let loadedState): VStack {
-            TextField(text: nameBinding) {
+            let inputNameBinding = Binding(get: { loadedState.name }, set: { value in onIntent(EnterNameIntentEntered(value: value)) })
+            TextField(text: inputNameBinding) {
                 Text("Input name")
             }
             Button(action:{
