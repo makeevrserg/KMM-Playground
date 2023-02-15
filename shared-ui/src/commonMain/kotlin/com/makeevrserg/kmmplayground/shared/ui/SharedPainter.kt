@@ -5,3 +5,6 @@ import androidx.compose.ui.graphics.painter.Painter
 import dev.icerock.moko.resources.ImageResource
 @Composable
 expect fun sharedPainter(imageResource: ImageResource): Painter
+
+@Composable
+fun ImageResource.sharedPainter() = sharedPainter(this)
