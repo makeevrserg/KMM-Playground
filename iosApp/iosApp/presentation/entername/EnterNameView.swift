@@ -14,6 +14,8 @@ struct EnterNameView: View {
     let root: CNavigationComponent<RootScreen, RootConfiguration>
     let child: RootConfigurationEnterName
     @ObservedObject var viewModel: EnterNameViewModel
+    @State var isSuccesfullToastShowed = false
+    
     init(root: CNavigationComponent<RootScreen, RootConfiguration>, child: RootConfigurationEnterName, viewModel: EnterNameViewModel) {
         self.root = root
         self.child = child
@@ -22,9 +24,13 @@ struct EnterNameView: View {
     var body: some View {
         EnterNameContent(state: viewModel.state){ intent in
             viewModel.acceptEnterName(intent: intent)
-        }
+        }.onReceive(createPublisher(viewModel.enterNameLabels)) { label in
+            isSuccesfullToastShowed = true
+        }.toast(isDisplayed: $isSuccesfullToastShowed, text: "Successfully saved!")
     }
 }
+
+
 private struct EnterNameContent: View{
     let state: EnterNameState
     let onIntent: (EnterNameIntent) -> Void

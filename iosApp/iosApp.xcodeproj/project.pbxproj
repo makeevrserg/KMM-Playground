@@ -28,6 +28,7 @@
 		A84D9D96297D7A1B00BA1DC6 /* StoryBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D90297D7A1B00BA1DC6 /* StoryBoardView.swift */; };
 		A84D9D99297D7A3F00BA1DC6 /* RootHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D98297D7A3F00BA1DC6 /* RootHolder.swift */; };
 		A854B9302999025A00513C31 /* CounterBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A854B92F2999025A00513C31 /* CounterBinding.swift */; };
+		A8BC3315299D68C900230980 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC3314299D68C900230980 /* ToastModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		A84D9D90297D7A1B00BA1DC6 /* StoryBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoardView.swift; sourceTree = "<group>"; };
 		A84D9D98297D7A3F00BA1DC6 /* RootHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootHolder.swift; sourceTree = "<group>"; };
 		A854B92F2999025A00513C31 /* CounterBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterBinding.swift; sourceTree = "<group>"; };
+		A8BC3314299D68C900230980 /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
 		C96AC21C0B20836276638E2C /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E2EFF7295FACA602DE9ED3C2 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +212,7 @@
 		A84D9D8F297D7A1B00BA1DC6 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				A8BC3313299D68BD00230980 /* toast */,
 				A84D9D90297D7A1B00BA1DC6 /* StoryBoardView.swift */,
 				A8109D18297D821D003D0712 /* StackView.swift */,
 			);
@@ -225,6 +228,14 @@
 				A8109D16297D7FE8003D0712 /* AppDelegate.swift */,
 			);
 			path = app;
+			sourceTree = "<group>";
+		};
+		A8BC3313299D68BD00230980 /* toast */ = {
+			isa = PBXGroup;
+			children = (
+				A8BC3314299D68C900230980 /* ToastModifier.swift */,
+			);
+			path = toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +367,7 @@
 				A8109D17297D7FE8003D0712 /* AppDelegate.swift in Sources */,
 				A84D9D77297D798A00BA1DC6 /* iosAppApp.swift in Sources */,
 				A837012C29996978008F19CB /* EnterNameView.swift in Sources */,
+				A8BC3315299D68C900230980 /* ToastModifier.swift in Sources */,
 				A84D9D92297D7A1B00BA1DC6 /* ViewController.swift in Sources */,
 				A84D9D99297D7A3F00BA1DC6 /* RootHolder.swift in Sources */,
 				A813395429893D400031FDF9 /* CounterView.swift in Sources */,

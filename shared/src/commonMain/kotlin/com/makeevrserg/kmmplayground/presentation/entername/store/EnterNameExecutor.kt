@@ -28,6 +28,7 @@ class EnterNameExecutor(
                     localStorageRepository.name.saveValue(newName)
                     withContext(KDispatchers.Main) {
                         EnterNameIntent.LoadValue.also(::executeIntent)
+                        EnterNameLabel.Successful.also(::publish)
                     }
                 }
             }
