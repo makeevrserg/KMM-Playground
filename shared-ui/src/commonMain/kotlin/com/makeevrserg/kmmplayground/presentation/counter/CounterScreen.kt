@@ -8,11 +8,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.arkivanov.decompose.router.stack.pop
 import com.makeevrserg.kmmplayground.components.DefaultTopAppBar
 import com.makeevrserg.kmmplayground.presentation.counter.store.CounterIntent
 import com.makeevrserg.kmmplayground.presentation.counter.store.CounterState
-import com.makeevrserg.kmmplayground.shared.BackToolBar
 
 @Composable
 fun CounterScreen(
@@ -42,7 +40,8 @@ fun CounterScreen(
             Button(
                 onClick = {
                     CounterIntent.Decrement.also(onIntent)
-                }, content = {
+                },
+                content = {
                     Text("Decrement")
                 }
             )

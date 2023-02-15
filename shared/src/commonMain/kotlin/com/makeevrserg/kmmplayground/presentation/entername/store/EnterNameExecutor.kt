@@ -7,7 +7,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
 class EnterNameExecutor(
     private val localStorageRepository: LocalStorageRepository
 ) : CoroutineExecutor<EnterNameIntent, Nothing, EnterNameState, EnterNameMessage, EnterNameLabel>() {

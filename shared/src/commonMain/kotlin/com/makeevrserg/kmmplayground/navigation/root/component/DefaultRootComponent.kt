@@ -1,15 +1,21 @@
 package com.makeevrserg.kmmplayground.navigation.root.component
 
 import com.arkivanov.decompose.ComponentContext
-import com.arkivanov.decompose.router.stack.*
+import com.arkivanov.decompose.router.stack.ChildStack
+import com.arkivanov.decompose.router.stack.StackNavigation
+import com.arkivanov.decompose.router.stack.childStack
+import com.arkivanov.decompose.router.stack.pop
+import com.arkivanov.decompose.router.stack.push
+import com.arkivanov.decompose.router.stack.replaceAll
+import com.arkivanov.decompose.router.stack.replaceCurrent
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.instancekeeper.getOrCreate
 import com.makeevrserg.kmmplayground.di.ServiceLocator
-import com.makeevrserg.kmmplayground.presentation.counter.CounterViewModel
 import com.makeevrserg.kmmplayground.navigation.core.cNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.RootScreen
 import com.makeevrserg.kmmplayground.presentation.connection.ConnectionViewModel
+import com.makeevrserg.kmmplayground.presentation.counter.CounterViewModel
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameViewModel
 import com.makeevrserg.mobile.di_container.getValue
 import com.makeevrserg.mobilex.ktx_core.platform.KDispatchers

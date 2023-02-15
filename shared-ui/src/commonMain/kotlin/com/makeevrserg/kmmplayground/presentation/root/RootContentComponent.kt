@@ -10,12 +10,12 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stac
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
 import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
-import com.makeevrserg.kmmplayground.presentation.entername.EnterNameScreenComponent
-import com.makeevrserg.kmmplayground.presentation.sample.SampleScreenComponent
-import com.makeevrserg.kmmplayground.presentation.screen_selector.ScreenSelectorScreen
 import com.makeevrserg.kmmplayground.presentation.connection.ConnectionScreenComponent
 import com.makeevrserg.kmmplayground.presentation.counter.CounterScreenComponent
+import com.makeevrserg.kmmplayground.presentation.entername.EnterNameScreenComponent
 import com.makeevrserg.kmmplayground.presentation.rick_morty.RMRootScreenComponent
+import com.makeevrserg.kmmplayground.presentation.sample.SampleScreenComponent
+import com.makeevrserg.kmmplayground.presentation.screen_selector.ScreenSelectorScreen
 
 @Composable
 fun RootContentComponent(component: RootComponent, modifier: Modifier = Modifier) {
@@ -32,7 +32,7 @@ fun RootContentComponent(component: RootComponent, modifier: Modifier = Modifier
                 is RootConfiguration.SampleScreen -> SampleScreenComponent(child.component, child.greeting)
                 is RootConfiguration.ScreenSelector -> ScreenSelectorScreen(child.component)
                 is RootConfiguration.EnterName -> EnterNameScreenComponent(child.component, child.viewModel)
-                is RootConfiguration.ConnectionScreen -> ConnectionScreenComponent(child.component,child.viewModel)
+                is RootConfiguration.ConnectionScreen -> ConnectionScreenComponent(child.component, child.viewModel)
             }
         }
     }

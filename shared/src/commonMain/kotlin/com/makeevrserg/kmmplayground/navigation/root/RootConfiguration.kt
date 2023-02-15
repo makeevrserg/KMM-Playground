@@ -1,11 +1,11 @@
 package com.makeevrserg.kmmplayground.navigation.root
 
-import com.makeevrserg.kmmplayground.sample.Greeting
-import com.makeevrserg.kmmplayground.presentation.counter.CounterViewModel
 import com.makeevrserg.kmmplayground.navigation.core.CNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.presentation.connection.ConnectionViewModel
+import com.makeevrserg.kmmplayground.presentation.counter.CounterViewModel
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameViewModel
+import com.makeevrserg.kmmplayground.sample.Greeting
 
 sealed interface RootConfiguration {
     class ConnectionScreen(
@@ -34,5 +34,5 @@ sealed interface RootConfiguration {
     class EnterName(
         val component: RootComponent,
         val viewModel: EnterNameViewModel
-    ): RootConfiguration
+    ) : RootConfiguration
 }

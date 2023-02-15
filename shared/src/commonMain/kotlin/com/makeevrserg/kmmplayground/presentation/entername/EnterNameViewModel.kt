@@ -22,7 +22,7 @@ class EnterNameViewModel(
 
     val enterNameState = store.stateFlow.cStateFlow()
     val enterNameLabels = store.labels.cFlow()
-    fun acceptEnterName(intent: EnterNameIntent){
+    fun acceptEnterName(intent: EnterNameIntent) {
         store.accept(intent)
     }
 

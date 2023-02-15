@@ -1,8 +1,6 @@
 package com.makeevrserg.kmmplayground.presentation.connection.store
 
-import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.Intent
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.State
-import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.Label
 
 // In Executor
 

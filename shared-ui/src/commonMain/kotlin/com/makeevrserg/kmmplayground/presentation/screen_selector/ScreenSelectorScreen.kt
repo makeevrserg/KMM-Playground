@@ -57,6 +57,6 @@ private fun ScreenSelectorButton(
     Button(onClick = {
         component.navigationController.push(screen)
     }, content = {
-        Text(text)
-    })
+            Text(text)
+        })
 }

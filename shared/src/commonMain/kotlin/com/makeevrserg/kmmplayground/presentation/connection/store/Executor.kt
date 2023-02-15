@@ -1,10 +1,9 @@
 package com.makeevrserg.kmmplayground.presentation.connection.store
 
 import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineExecutor
-
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.Intent
-import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.State
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.Label
+import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.State
 import com.makeevrserg.mobilex.ktx_core.platform.KotlinDispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

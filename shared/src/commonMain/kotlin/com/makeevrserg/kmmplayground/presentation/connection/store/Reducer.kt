@@ -1,9 +1,7 @@
 package com.makeevrserg.kmmplayground.presentation.connection.store
 
 import com.arkivanov.mvikotlin.core.store.Reducer
-import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.Intent
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.State
-import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.Label
 
 internal object ReducerImpl : Reducer<State, Message> {
     override fun State.reduce(msg: Message): State {

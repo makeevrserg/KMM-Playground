@@ -9,4 +9,3 @@ class LocalStorageRepositoryImpl(
 ) : LocalStorageRepository {
     override val name: FlowStorageValue<String> = StringFlowStorageValue(settings, "NAME", "")
 }
-
