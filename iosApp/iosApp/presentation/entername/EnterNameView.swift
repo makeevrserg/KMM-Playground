@@ -36,7 +36,7 @@ private struct EnterNameContent: View{
             let inputNameBinding = Binding(get: { loadedState.name }, set: { value in onIntent(EnterNameIntentEntered(value: value)) })
             TextField(text: inputNameBinding) {
                 Text("Input name")
-            }
+            }.disabled(loadedState.isLoading)
             Button(action:{
                 onIntent(EnterNameIntentSaveValue())
             },label:{
