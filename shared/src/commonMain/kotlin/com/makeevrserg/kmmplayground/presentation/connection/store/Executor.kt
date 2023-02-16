@@ -13,25 +13,30 @@ import kotlinx.coroutines.withContext
 internal class Executor(
     private val dispatchers: KotlinDispatchers
 ) : CoroutineExecutor<Intent, Unit, State, Message, Label>(dispatchers.Main) {
+    private inline fun <reified T : State> State.switch(
+        block: (T) -> Unit
+    ) {
+        (this as? T)?.let(block)
+    }
+
     private var connectionJob: Job? = null
     override fun executeIntent(intent: Intent, getState: () -> State) {
         val state = getState.invoke()
-        when (intent) {
-            Intent.ConnectClicked -> state.switch(
-                onDisconnected = { connect() }
-            )
 
-            Intent.DisconnectClicked -> state.switch(
-                onConnected = { dispatch(Message.Disconnected) },
-                onConnecting = {
+        when (intent) {
+            Intent.ConnectClicked -> state.switch<State.Disconnected> {
+                connect()
+            }
+
+            Intent.DisconnectClicked -> {
+                state.switch<State.Connected> { dispatch(Message.Disconnected) }
+                state.switch<State.Connecting> {
                     connectionJob?.cancel()
                     dispatch(Message.Disconnected)
                 }
-            )
+            }
 
-            Intent.ReconnectClicked -> state.switch(
-                onError = { connect() }
-            )
+            Intent.ReconnectClicked -> state.switch<State.Error> { connect() }
         }
     }
 

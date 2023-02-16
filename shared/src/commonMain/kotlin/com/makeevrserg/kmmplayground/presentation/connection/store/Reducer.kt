@@ -4,22 +4,27 @@ import com.arkivanov.mvikotlin.core.store.Reducer
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.State
 
 internal object ReducerImpl : Reducer<State, Message> {
-    override fun State.reduce(msg: Message): State {
-        return when (msg) {
-            Message.Connected -> reduce(
-                onConnecting = {
-                    State.Connected
-                }
-            )
-            Message.Connecting -> reduce(
-                onDisconnected = { State.Connecting },
-                onError = { State.Connecting }
-            )
+    private inline fun <reified T : State> State.reduce(
+        block: (T) -> State
+    ): State {
+        return (this as? T)?.let(block) ?: this
+    }
 
-            Message.Disconnected -> reduce(
-                onConnected = { State.Disconnected },
-                onConnecting = { State.Disconnected }
-            )
+    override fun State.reduce(msg: Message): State {
+
+        return when (msg) {
+            Message.Connected -> reduce<State.Connecting> {
+                State.Connected
+            }
+
+            Message.Connecting -> reduce<State.Disconnected> {
+                State.Connecting
+            }.reduce<State.Error> { State.Connecting }
+
+
+            Message.Disconnected -> reduce<State.Connected> {
+                State.Disconnected
+            }.reduce<State.Connecting> { State.Disconnected }
         }
     }
 }
