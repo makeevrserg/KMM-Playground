@@ -17,8 +17,8 @@ kotlin {
                 implementation(libs.decompose.core)
                 implementation(libs.decompose.compose.jetbrains)
                 // Local
+                implementation(project(":modules:services:resources"))
                 implementation(project(":shared"))
-                implementation(project(":resources"))
             }
         }
 

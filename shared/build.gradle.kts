@@ -32,7 +32,7 @@ kotlin {
             export(libs.decompose.core)
             export(libs.essenty.lifecycle)
             // Local
-            export(project(":resources"))
+//            export(project(":resources"))
         }
     }
 
@@ -58,7 +58,8 @@ kotlin {
                 api(libs.mvikotlin.main)
                 api(libs.mvikotlin.extensions.coroutines)
                 // Local
-                api(project(":resources"))
+                api(project(":modules:services:resources"))
+                api(project(":modules:services:core"))
             }
         }
         val androidMain by getting {

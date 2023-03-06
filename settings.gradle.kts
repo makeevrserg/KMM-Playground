@@ -22,7 +22,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "KMM-Playground"
 include(":androidApp")
-include(":desktop")
+//include(":desktop")
+include(":modules:services:core")
+include(":modules:services:player")
+include(":modules:services:resources")
+include(":modules:services:shared-ui")
 include(":shared")
-include(":resources")
-include(":shared-ui")
