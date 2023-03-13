@@ -19,6 +19,7 @@ kotlin {
                 // Local
                 implementation(project(":shared"))
                 implementation(project(":modules:services:resources"))
+                implementation(project(":modules:services:core"))
             }
         }
 

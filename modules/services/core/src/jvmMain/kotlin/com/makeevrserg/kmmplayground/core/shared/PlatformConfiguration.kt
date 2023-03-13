@@ -1,4 +1,4 @@
-package com.makeevrserg.kmmplayground.shared
+package com.makeevrserg.kmmplayground.core.shared
 
 import java.util.prefs.Preferences
 

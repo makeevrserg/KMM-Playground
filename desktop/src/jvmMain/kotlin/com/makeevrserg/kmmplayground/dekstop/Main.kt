@@ -12,7 +12,7 @@ import com.arkivanov.essenty.lifecycle.LifecycleRegistry
 import com.makeevrserg.kmmplayground.di.ServiceLocator
 import com.makeevrserg.kmmplayground.navigation.root.component.DefaultRootComponent
 import com.makeevrserg.kmmplayground.presentation.root.RootContentComponent
-import com.makeevrserg.kmmplayground.shared.PlatformConfiguration
+import com.makeevrserg.kmmplayground.core.shared.PlatformConfiguration
 
 @OptIn(ExperimentalDecomposeApi::class)
 fun main() {

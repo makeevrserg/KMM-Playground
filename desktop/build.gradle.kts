@@ -23,6 +23,7 @@ kotlin {
                 // Local
                 implementation(project(":modules:services:resources"))
                 implementation(project(":modules:features:shared-ui"))
+                implementation(project(":modules:services:core"))
                 implementation(project(":shared"))
             }
         }

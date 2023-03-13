@@ -5,7 +5,7 @@ import com.makeevrserg.kmmplayground.di.factories.SettingsFactory
 import com.makeevrserg.kmmplayground.domain.LocalStorageRepositoryImpl
 import com.makeevrserg.kmmplayground.sample.Greeting
 import com.makeevrserg.kmmplayground.sample.getPlatform
-import com.makeevrserg.kmmplayground.shared.PlatformConfiguration
+import com.makeevrserg.kmmplayground.core.shared.PlatformConfiguration
 import com.makeevrserg.mobile.di_container.Lateinit
 import com.makeevrserg.mobile.di_container.getValue
 import com.makeevrserg.mobile.di_container.module
