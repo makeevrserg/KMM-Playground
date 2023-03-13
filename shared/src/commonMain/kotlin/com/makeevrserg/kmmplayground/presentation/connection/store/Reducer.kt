@@ -11,7 +11,6 @@ internal object ReducerImpl : Reducer<State, Message> {
     }
 
     override fun State.reduce(msg: Message): State {
-
         return when (msg) {
             Message.Connected -> reduce<State.Connecting> {
                 State.Connected
@@ -20,7 +19,6 @@ internal object ReducerImpl : Reducer<State, Message> {
             Message.Connecting -> reduce<State.Disconnected> {
                 State.Connecting
             }.reduce<State.Error> { State.Connecting }
-
 
             Message.Disconnected -> reduce<State.Connected> {
                 State.Disconnected

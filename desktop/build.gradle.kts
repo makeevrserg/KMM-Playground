@@ -21,9 +21,9 @@ kotlin {
                 // MobileX
                 implementation(libs.mobileX.serviceLocator)
                 // Local
-                implementation(project(":shared-ui"))
+                implementation(project(":modules:services:resources"))
+                implementation(project(":modules:features:shared-ui"))
                 implementation(project(":shared"))
-                implementation(project(":resources"))
             }
         }
     }

@@ -3,7 +3,6 @@ package com.makeevrserg.kmmplayground.presentation.entername
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import com.arkivanov.decompose.router.stack.pop
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 
 @Composable
