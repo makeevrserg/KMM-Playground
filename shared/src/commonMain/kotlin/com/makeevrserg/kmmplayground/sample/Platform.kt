@@ -14,5 +14,3 @@ interface Platform {
         return StringDesc.Resource(MR.strings.example_shared_hello_world)
     }
 }
-
-internal expect fun getPlatform(): Platform
