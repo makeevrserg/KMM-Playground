@@ -20,6 +20,7 @@ kotlin {
                 implementation(project(":shared"))
                 implementation(project(":modules:services:resources"))
                 implementation(project(":modules:services:core"))
+                implementation(project(":modules:services:data-preferences"))
             }
         }
 

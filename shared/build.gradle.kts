@@ -60,6 +60,7 @@ kotlin {
                 // Local
                 api(project(":modules:services:resources"))
                 implementation(project(":modules:services:core"))
+                implementation(project(":modules:services:data-preferences"))
             }
         }
         val androidMain by getting {

@@ -2,18 +2,18 @@ package com.makeevrserg.kmmplayground.presentation.entername.store
 
 import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory
-import com.makeevrserg.kmmplayground.domain.LocalStorageRepository
+import com.makeevrserg.kmmplayground.data.preferences.LocalPreferencesRepository
 
 typealias EnterNameStore = Store<EnterNameIntent, EnterNameState, EnterNameLabel>
 
 fun EnterNameStore(
     storeFactory: StoreFactory,
-    localStorageRepository: LocalStorageRepository
+    localPreferencesRepository: LocalPreferencesRepository
 ): EnterNameStore {
     return storeFactory.create(
         name = "EnterNameStore",
         initialState = EnterNameState.Loading as EnterNameState,
-        executorFactory = { EnterNameExecutor(localStorageRepository) },
+        executorFactory = { EnterNameExecutor(localPreferencesRepository) },
         reducer = {
             when (it) {
                 is EnterNameMessage.Entered -> {

@@ -1,7 +1,7 @@
-package com.makeevrserg.kmmplayground.domain
+package com.makeevrserg.kmmplayground.data.preferences
 
 import com.makeevrserg.mobilex.ktx_core.storage.FlowStorageValue
 
-interface LocalStorageRepository {
+interface LocalPreferencesRepository {
     val name: FlowStorageValue<String>
 }

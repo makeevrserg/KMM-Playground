@@ -27,5 +27,6 @@ include(":shared")
 // Services
 include(":modules:services:resources")
 include(":modules:services:core")
+include(":modules:services:data-preferences")
 // Features
 include(":modules:features:shared-ui")
