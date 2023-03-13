@@ -12,8 +12,8 @@ build-logic/build
 build-logic/plugins/convention/build
 desktop/build
 shared/build
-modules/services/shared-ui/build
-modules/services/resources/build
+shared-ui/build
+resources/build
 iosApp/Pods
 
 captures

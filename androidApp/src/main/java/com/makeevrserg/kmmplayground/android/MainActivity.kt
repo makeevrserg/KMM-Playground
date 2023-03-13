@@ -15,8 +15,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // TODO Move into Application
-        val configuration = PlatformConfiguration(applicationContext)
-        ServiceLocator.platformConfigurationModule.initialize(configuration)
+        ServiceLocator.platformConfigurationModule.initialize(PlatformConfiguration(applicationContext))
         val componentContext = defaultComponentContext()
         val rootComponent = DefaultRootComponent(componentContext)
         setContent {
