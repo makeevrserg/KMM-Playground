@@ -21,7 +21,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "KMM-Playground"
-include(":androidApp")
+// include(":androidApp")
 include(":desktop")
 include(":shared")
 // Services

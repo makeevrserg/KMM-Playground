@@ -1,5 +1,3 @@
-package com.makeevrserg.kmmplayground.dekstop
-
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -10,6 +8,7 @@ import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.extensions.compose.jetbrains.lifecycle.LifecycleController
 import com.arkivanov.essenty.lifecycle.LifecycleRegistry
 import com.makeevrserg.kmmplayground.core.shared.PlatformConfiguration
+import com.makeevrserg.kmmplayground.dekstop.runOnUiThread
 import com.makeevrserg.kmmplayground.di.ServiceLocator
 import com.makeevrserg.kmmplayground.navigation.root.component.DefaultRootComponent
 import com.makeevrserg.kmmplayground.presentation.root.RootContentComponent
