@@ -14,7 +14,7 @@ import com.makeevrserg.kmmplayground.di.ServiceLocator
 import com.makeevrserg.kmmplayground.navigation.core.cNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.RootScreen
-import com.makeevrserg.kmmplayground.presentation.connection.ConnectionViewModel
+import com.makeevrserg.kmmplayground.presentation.connection.ConnectionComponent
 import com.makeevrserg.kmmplayground.presentation.counter.CounterViewModel
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameViewModel
 import com.makeevrserg.mobile.di_container.getValue
@@ -35,12 +35,11 @@ class DefaultRootComponent(
         childFactory = { config, context ->
             when (config) {
                 RootScreen.ConnectionScreen -> {
-                    val viewModel = context.instanceKeeper.getOrCreate {
-                        ConnectionViewModel(
+                    val viewModel = ConnectionComponent(
+                            componentContext = context,
                             storeFactory = storeFactory,
                             dispatchers = KDispatchers
                         )
-                    }
                     RootConfiguration.ConnectionScreen(
                         component = this.cNavigationComponent(),
                         viewModel = viewModel
