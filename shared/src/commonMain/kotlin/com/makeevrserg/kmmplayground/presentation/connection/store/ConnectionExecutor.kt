@@ -4,20 +4,19 @@ import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineExecutor
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.Intent
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.Label
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.State
+import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStoreFactory.Message
 import com.makeevrserg.mobilex.ktx_core.platform.KotlinDispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-internal class Executor(
+internal class ConnectionExecutor(
     private val dispatchers: KotlinDispatchers
 ) : CoroutineExecutor<Intent, Unit, State, Message, Label>(dispatchers.Main) {
     private inline fun <reified T : State> State.switch(
         block: (T) -> Unit
-    ) {
-        (this as? T)?.let(block)
-    }
+    ) = (this as? T)?.let(block)
 
     private var connectionJob: Job? = null
     override fun executeIntent(intent: Intent, getState: () -> State) {

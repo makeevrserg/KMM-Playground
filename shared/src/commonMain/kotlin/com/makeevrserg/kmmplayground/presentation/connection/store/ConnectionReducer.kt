@@ -2,13 +2,11 @@ package com.makeevrserg.kmmplayground.presentation.connection.store
 
 import com.arkivanov.mvikotlin.core.store.Reducer
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.State
-
-internal object ReducerImpl : Reducer<State, Message> {
+import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStoreFactory.Message
+internal object ConnectionReducer : Reducer<State, Message> {
     private inline fun <reified T : State> State.reduce(
         block: (T) -> State
-    ): State {
-        return (this as? T)?.let(block) ?: this
-    }
+    ): State = (this as? T)?.let(block) ?: this
 
     override fun State.reduce(msg: Message): State {
         return when (msg) {
