@@ -16,7 +16,7 @@ import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.RootScreen
 import com.makeevrserg.kmmplayground.presentation.connection.ConnectionComponentImpl
 import com.makeevrserg.kmmplayground.presentation.counter.CounterComponentImpl
-import com.makeevrserg.kmmplayground.presentation.entername.EnterNameViewModel
+import com.makeevrserg.kmmplayground.presentation.entername.EnterNameComponentImpl
 import com.makeevrserg.mobile.di_container.getValue
 import com.makeevrserg.mobilex.ktx_core.platform.KDispatchers
 
@@ -64,12 +64,13 @@ class DefaultRootComponent(
 
                 RootScreen.ScreenSelector -> RootConfiguration.ScreenSelector(this.cNavigationComponent())
                 RootScreen.EnterName -> {
-                    val viewModel = context.instanceKeeper.getOrCreate {
-                        EnterNameViewModel(storeFactory, localStorageRepository)
-                    }
                     RootConfiguration.EnterName(
                         this.cNavigationComponent(),
-                        viewModel
+                        EnterNameComponentImpl(
+                            context = context,
+                            storeFactory = storeFactory,
+                            localPreferencesRepository = localStorageRepository
+                        )
                     )
                 }
             }

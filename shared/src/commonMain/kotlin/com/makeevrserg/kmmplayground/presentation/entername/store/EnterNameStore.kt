@@ -1,33 +1,37 @@
 package com.makeevrserg.kmmplayground.presentation.entername.store
 
 import com.arkivanov.mvikotlin.core.store.Store
-import com.arkivanov.mvikotlin.core.store.StoreFactory
-import com.makeevrserg.kmmplayground.data.preferences.LocalPreferencesRepository
+import com.makeevrserg.kmmplayground.presentation.entername.store.EnterNameStore.*
 
-typealias EnterNameStore = Store<EnterNameIntent, EnterNameState, EnterNameLabel>
+interface EnterNameStore : Store<Intent, State, Label> {
+    sealed interface State {
+        val isLoading: Boolean
+        val isButtonEnabled: Boolean
 
-fun EnterNameStore(
-    storeFactory: StoreFactory,
-    localPreferencesRepository: LocalPreferencesRepository
-): EnterNameStore {
-    return storeFactory.create(
-        name = "EnterNameStore",
-        initialState = EnterNameState.Loading as EnterNameState,
-        executorFactory = { EnterNameExecutor(localPreferencesRepository) },
-        reducer = {
-            when (it) {
-                is EnterNameMessage.Entered -> {
-                    (this as? EnterNameState.Loaded)?.copy(name = it.value) ?: this
-                }
-
-                is EnterNameMessage.FirstLoaded -> {
-                    EnterNameState.Loaded(it.value, it.value, false)
-                }
-
-                is EnterNameMessage.SetLoading -> {
-                    (this as? EnterNameState.Loaded)?.copy(isLoading = it.state) ?: this
-                }
-            }
+        object Loading : State {
+            override val isLoading: Boolean = true
+            override val isButtonEnabled: Boolean = false
         }
-    )
+
+        data class Loaded(
+            val name: String,
+            val settingsName: String,
+            override val isLoading: Boolean
+        ) : State {
+            override val isButtonEnabled: Boolean
+                get() = name != settingsName && name.isNotBlank() && !isLoading
+        }
+    }
+
+    sealed interface Label {
+        object Successful : Label
+    }
+
+    sealed interface Intent {
+        class Entered(val value: String) : Intent
+        object LoadValue : Intent
+        object SaveValue : Intent
+    }
+
+
 }

@@ -13,14 +13,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import com.makeevrserg.kmmplayground.components.DefaultTopAppBar
-import com.makeevrserg.kmmplayground.presentation.entername.store.EnterNameIntent
-import com.makeevrserg.kmmplayground.presentation.entername.store.EnterNameState
+import com.makeevrserg.kmmplayground.presentation.entername.store.EnterNameStore.Intent
+import com.makeevrserg.kmmplayground.presentation.entername.store.EnterNameStore.State
 
 @Composable
 internal fun EnterNameScreen(
-    state: EnterNameState,
+    state: State,
     onBackPressed: () -> Unit,
-    onIntent: (EnterNameIntent) -> Unit
+    onIntent: (Intent) -> Unit
 ) {
     Column(
         Modifier.fillMaxSize(),
@@ -34,7 +34,7 @@ internal fun EnterNameScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             when (val state = state) {
-                is EnterNameState.Loaded -> {
+                is State.Loaded -> {
                     Text(
                         text = "Input new name!",
                         modifier = Modifier.fillMaxWidth(),
@@ -44,13 +44,13 @@ internal fun EnterNameScreen(
                         value = state.name,
                         enabled = !state.isLoading,
                         onValueChange = {
-                            EnterNameIntent.Entered(it).also(onIntent)
+                            Intent.Entered(it).also(onIntent)
                         }
                     )
                     Button(
                         enabled = state.isButtonEnabled,
                         onClick = {
-                            EnterNameIntent.SaveValue.also(onIntent)
+                            Intent.SaveValue.also(onIntent)
                         },
                         content = {
                             Text(
@@ -62,7 +62,7 @@ internal fun EnterNameScreen(
                     )
                 }
 
-                EnterNameState.Loading -> CircularProgressIndicator()
+                State.Loading -> CircularProgressIndicator()
             }
         }
     }
