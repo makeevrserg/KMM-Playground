@@ -1,10 +1,9 @@
 package com.makeevrserg.kmmplayground.presentation.counter
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
-import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
+import com.makeevrserg.kmmplayground.presentation.root.component.RootComponent
 
 @Composable
 fun CounterScreenComponent(component: RootComponent, viewModel: CounterComponent) {

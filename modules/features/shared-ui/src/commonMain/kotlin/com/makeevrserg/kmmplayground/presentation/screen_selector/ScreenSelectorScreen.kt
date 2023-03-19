@@ -9,8 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.router.stack.push
-import com.makeevrserg.kmmplayground.navigation.root.RootScreen
-import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
+import com.makeevrserg.kmmplayground.presentation.root.RootChild
+import com.makeevrserg.kmmplayground.presentation.root.component.RootComponent
 
 @Composable
 fun ScreenSelectorScreen(component: RootComponent) {
@@ -22,28 +22,28 @@ fun ScreenSelectorScreen(component: RootComponent) {
         ScreenSelectorButton(
             component = component,
             text = "Enter Name Screen",
-            screen = RootScreen.EnterName
+            screen = RootChild.EnterName
         )
         ScreenSelectorButton(
             component = component,
             text = "Sample Screen",
-            screen = RootScreen.SampleScreen
+            screen = RootChild.SampleScreen
         )
         ScreenSelectorButton(
             component = component,
             text = "RickMorty",
-            screen = RootScreen.RickAndMorty
+            screen = RootChild.RickAndMorty
         )
         ScreenSelectorButton(
             component = component,
             text = "Calculator",
-            screen = RootScreen.Counter
+            screen = RootChild.Counter
         )
 
         ScreenSelectorButton(
             component = component,
             text = "Connection",
-            screen = RootScreen.ConnectionScreen
+            screen = RootChild.ConnectionScreen
         )
     }
 }
@@ -52,7 +52,7 @@ fun ScreenSelectorScreen(component: RootComponent) {
 private fun ScreenSelectorButton(
     text: String,
     component: RootComponent,
-    screen: RootScreen
+    screen: RootChild
 ) {
     Button(onClick = {
         component.navigationController.push(screen)
