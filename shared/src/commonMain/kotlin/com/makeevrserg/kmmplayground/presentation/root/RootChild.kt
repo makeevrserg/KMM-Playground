@@ -18,4 +18,7 @@ sealed interface RootChild : Parcelable {
 
     @Parcelize
     object EnterName : RootChild
+
+    @Parcelize
+    object BottomNav : RootChild
 }

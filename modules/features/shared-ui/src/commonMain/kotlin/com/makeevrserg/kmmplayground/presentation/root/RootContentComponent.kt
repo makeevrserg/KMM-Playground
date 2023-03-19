@@ -8,6 +8,7 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.stack.Children
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.slide
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
+import com.makeevrserg.kmmplayground.presentation.bottomnav.BottomNavContentComponent
 import com.makeevrserg.kmmplayground.presentation.connection.ConnectionScreenComponent
 import com.makeevrserg.kmmplayground.presentation.counter.CounterScreenComponent
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameScreenComponent
@@ -29,8 +30,11 @@ fun RootContentComponent(
         ) {
             when (val child = it.instance) {
                 is RootConfiguration.Counter -> CounterScreenComponent(child.rootComponent, child.counterComponent)
+
                 is RootConfiguration.SampleScreen -> SampleScreenComponent(child.rootComponent, child.greeting)
+
                 is RootConfiguration.ScreenSelector -> ScreenSelectorScreenComponent(child.rootComponent)
+
                 is RootConfiguration.EnterName -> EnterNameScreenComponent(
                     child.rootComponent,
                     child.enterNameComponent
@@ -39,6 +43,11 @@ fun RootContentComponent(
                 is RootConfiguration.ConnectionScreen -> ConnectionScreenComponent(
                     child.rootComponent,
                     child.connectionComponent
+                )
+
+                is RootConfiguration.BottomNav -> BottomNavContentComponent(
+                    rootComponent = child.rootComponent,
+                    bottomNavComponent = child.bottomNavComponent
                 )
             }
         }

@@ -38,5 +38,10 @@ fun ScreenSelectorScreen(
             text = "Connection",
             screen = RootChild.ConnectionScreen
         )
+        ScreenSelectorButton(
+            receive = receive,
+            text = "BottomNav",
+            screen = RootChild.BottomNav
+        )
     }
 }

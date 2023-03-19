@@ -10,6 +10,7 @@ import com.arkivanov.decompose.router.stack.replaceAll
 import com.arkivanov.decompose.router.stack.replaceCurrent
 import com.arkivanov.decompose.value.Value
 import com.makeevrserg.kmmplayground.di.ServiceLocator
+import com.makeevrserg.kmmplayground.presentation.bottomnav.BottomNavComponentImpl
 import com.makeevrserg.kmmplayground.presentation.connection.ConnectionComponentImpl
 import com.makeevrserg.kmmplayground.presentation.counter.CounterComponentImpl
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameComponentImpl
@@ -57,6 +58,7 @@ class RootComponentImpl(
                 )
 
                 RootChild.ScreenSelector -> RootConfiguration.ScreenSelector(this)
+
                 RootChild.EnterName -> {
                     RootConfiguration.EnterName(
                         this,
@@ -64,6 +66,15 @@ class RootComponentImpl(
                             context = context,
                             storeFactory = serviceLocator.storeFactoryModule.value,
                             localPreferencesRepository = serviceLocator.localStorageRepository.value
+                        )
+                    )
+                }
+
+                RootChild.BottomNav -> {
+                    RootConfiguration.BottomNav(
+                        rootComponent = this,
+                        bottomNavComponent = BottomNavComponentImpl(
+                            context = context
                         )
                     )
                 }
