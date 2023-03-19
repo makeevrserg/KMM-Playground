@@ -3,14 +3,15 @@ package com.makeevrserg.kmmplayground.presentation.counter
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
 import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
 
 @Composable
-fun CounterScreenComponent(component: RootComponent, viewModel: CounterViewModel) {
-    val state by viewModel.stateFlow.collectAsState()
+fun CounterScreenComponent(component: RootComponent, viewModel: CounterComponent) {
+    val state by viewModel.counterState.subscribeAsState()
     CounterScreen(
         state = state,
         onBackPressed = component::pop,
-        onIntent = viewModel::acceptCalculator
+        onIntent = viewModel::acceptCounterIntent
     )
 }

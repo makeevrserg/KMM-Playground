@@ -15,7 +15,7 @@ import com.makeevrserg.kmmplayground.navigation.core.cNavigationComponent
 import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.navigation.root.RootScreen
 import com.makeevrserg.kmmplayground.presentation.connection.ConnectionComponentImpl
-import com.makeevrserg.kmmplayground.presentation.counter.CounterViewModel
+import com.makeevrserg.kmmplayground.presentation.counter.CounterComponentImpl
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameViewModel
 import com.makeevrserg.mobile.di_container.getValue
 import com.makeevrserg.mobilex.ktx_core.platform.KDispatchers
@@ -36,10 +36,10 @@ class DefaultRootComponent(
             when (config) {
                 RootScreen.ConnectionScreen -> {
                     val viewModel = ConnectionComponentImpl(
-                            componentContext = context,
-                            storeFactory = storeFactory,
-                            dispatchers = KDispatchers
-                        )
+                        componentContext = context,
+                        storeFactory = storeFactory,
+                        dispatchers = KDispatchers
+                    )
                     RootConfiguration.ConnectionScreen(
                         component = this.cNavigationComponent(),
                         viewModel = viewModel
@@ -47,12 +47,12 @@ class DefaultRootComponent(
                 }
 
                 RootScreen.Counter -> {
-                    val viewModel = context.instanceKeeper.getOrCreate {
-                        CounterViewModel(storeFactory)
-                    }
                     RootConfiguration.Counter(
-                        this,
-                        viewModel
+                        component = this,
+                        viewModel = CounterComponentImpl(
+                            context = context,
+                            storeFactory = storeFactory
+                        )
                     )
                 }
 
