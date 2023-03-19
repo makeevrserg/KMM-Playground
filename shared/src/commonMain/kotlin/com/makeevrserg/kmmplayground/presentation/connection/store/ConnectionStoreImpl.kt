@@ -10,9 +10,10 @@ import com.makeevrserg.mobilex.ktx_core.platform.KotlinDispatchers
 class ConnectionStoreImpl(
     dispatchers: KotlinDispatchers,
     storeFactory: StoreFactory
-) : ConnectionStore, Store<Intent, State, Label> by storeFactory.create(
-    name = "ConnectionStore",
-    initialState = State.Disconnected,
-    executorFactory = { ConnectionExecutor(dispatchers) },
-    reducer = ConnectionReducer
-)
+) : ConnectionStore,
+    Store<Intent, State, Label> by storeFactory.create(
+        name = "ConnectionStore",
+        initialState = State.Disconnected,
+        executorFactory = { ConnectionExecutor(dispatchers) },
+        reducer = ConnectionReducer
+    )

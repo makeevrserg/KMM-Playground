@@ -1,6 +1,5 @@
 package com.makeevrserg.kmmplayground.presentation.connection.store
 
-import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.makeevrserg.mobile.di_container.Factory
 import com.makeevrserg.mobilex.ktx_core.platform.KotlinDispatchers
@@ -20,5 +19,4 @@ class ConnectionStoreFactory(
         object Connecting : Message
         object Disconnected : Message
     }
-
 }

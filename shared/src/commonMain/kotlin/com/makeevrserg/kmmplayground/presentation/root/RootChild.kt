@@ -11,9 +11,6 @@ sealed interface RootChild : Parcelable {
     object ScreenSelector : RootChild
 
     @Parcelize
-    object RickAndMorty : RootChild
-
-    @Parcelize
     object SampleScreen : RootChild
 
     @Parcelize

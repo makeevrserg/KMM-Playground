@@ -9,9 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.makeevrserg.kmmplayground.components.DefaultTopAppBar
-import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStore.Label
-import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStore.State
 import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStore.Intent
+import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStore.State
 
 @Composable
 fun CounterScreen(

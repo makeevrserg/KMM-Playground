@@ -15,7 +15,10 @@ import com.makeevrserg.kmmplayground.shared.asComposableString
 import com.makeevrserg.kmmplayground.shared.ui.sharedPainter
 
 @Composable
-internal fun SampleScreen(greeting: Greeting, onBackPressed: () -> Unit) {
+internal fun SampleScreen(
+    greeting: Greeting,
+    onBackPressed: () -> Unit
+) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top,

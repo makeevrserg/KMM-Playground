@@ -10,11 +10,11 @@ import com.arkivanov.decompose.router.stack.replaceAll
 import com.arkivanov.decompose.router.stack.replaceCurrent
 import com.arkivanov.decompose.value.Value
 import com.makeevrserg.kmmplayground.di.ServiceLocator
-import com.makeevrserg.kmmplayground.presentation.root.RootConfiguration
-import com.makeevrserg.kmmplayground.presentation.root.RootChild
 import com.makeevrserg.kmmplayground.presentation.connection.ConnectionComponentImpl
 import com.makeevrserg.kmmplayground.presentation.counter.CounterComponentImpl
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameComponentImpl
+import com.makeevrserg.kmmplayground.presentation.root.RootChild
+import com.makeevrserg.kmmplayground.presentation.root.RootConfiguration
 import com.makeevrserg.mobilex.ktx_core.platform.KDispatchers
 
 class RootComponentImpl(
@@ -51,7 +51,6 @@ class RootComponentImpl(
                     )
                 }
 
-                RootChild.RickAndMorty -> RootConfiguration.RickAndMorty(this)
                 RootChild.SampleScreen -> RootConfiguration.SampleScreen(
                     this,
                     serviceLocator.greetingModule.value

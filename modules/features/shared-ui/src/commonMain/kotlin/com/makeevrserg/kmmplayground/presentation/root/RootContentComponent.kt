@@ -8,16 +8,18 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.stack.Children
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.slide
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
-import com.makeevrserg.kmmplayground.presentation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.presentation.connection.ConnectionScreenComponent
 import com.makeevrserg.kmmplayground.presentation.counter.CounterScreenComponent
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameScreenComponent
-import com.makeevrserg.kmmplayground.presentation.rick_morty.RMRootScreenComponent
+import com.makeevrserg.kmmplayground.presentation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.presentation.sample.SampleScreenComponent
-import com.makeevrserg.kmmplayground.presentation.screen_selector.ScreenSelectorScreen
+import com.makeevrserg.kmmplayground.presentation.screen_selector.ScreenSelectorScreenComponent
 
 @Composable
-fun RootContentComponent(component: RootComponent, modifier: Modifier = Modifier) {
+fun RootContentComponent(
+    component: RootComponent,
+    modifier: Modifier = Modifier
+) {
     val childStack by component.childStack.subscribeAsState()
     Column(modifier = modifier) {
         Children(
@@ -27,11 +29,17 @@ fun RootContentComponent(component: RootComponent, modifier: Modifier = Modifier
         ) {
             when (val child = it.instance) {
                 is RootConfiguration.Counter -> CounterScreenComponent(child.rootComponent, child.counterComponent)
-                is RootConfiguration.RickAndMorty -> RMRootScreenComponent(child.rootComponent)
                 is RootConfiguration.SampleScreen -> SampleScreenComponent(child.rootComponent, child.greeting)
-                is RootConfiguration.ScreenSelector -> ScreenSelectorScreen(child.rootComponent)
-                is RootConfiguration.EnterName -> EnterNameScreenComponent(child.rootComponent, child.enterNameComponent)
-                is RootConfiguration.ConnectionScreen -> ConnectionScreenComponent(child.rootComponent, child.connectionComponent)
+                is RootConfiguration.ScreenSelector -> ScreenSelectorScreenComponent(child.rootComponent)
+                is RootConfiguration.EnterName -> EnterNameScreenComponent(
+                    child.rootComponent,
+                    child.enterNameComponent
+                )
+
+                is RootConfiguration.ConnectionScreen -> ConnectionScreenComponent(
+                    child.rootComponent,
+                    child.connectionComponent
+                )
             }
         }
     }

@@ -5,6 +5,7 @@ import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionSto
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.Label
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStore.State
 import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionStoreFactory.Message
+import com.makeevrserg.kmmplayground.util.Constants
 import com.makeevrserg.mobilex.ktx_core.platform.KotlinDispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -42,7 +43,7 @@ internal class ConnectionExecutor(
     private fun connect() {
         dispatch(Message.Connecting)
         connectionJob = scope.launch(dispatchers.IO) {
-            delay(2000)
+            delay(Constants.DEFAULT_SHORT_DELAY)
             withContext(dispatchers.Main) {
                 dispatch(Message.Connected)
             }

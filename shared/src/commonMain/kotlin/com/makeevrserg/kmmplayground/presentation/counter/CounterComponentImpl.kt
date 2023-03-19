@@ -3,7 +3,6 @@ package com.makeevrserg.kmmplayground.presentation.counter
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.labels
-import com.makeevrserg.kmmplayground.SharedViewModel
 import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStore.Intent
 import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStore.Label
 import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStoreFactory

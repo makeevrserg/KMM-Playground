@@ -3,8 +3,8 @@ package com.makeevrserg.kmmplayground.presentation.root.component
 import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.value.Value
-import com.makeevrserg.kmmplayground.presentation.root.RootConfiguration
 import com.makeevrserg.kmmplayground.presentation.root.RootChild
+import com.makeevrserg.kmmplayground.presentation.root.RootConfiguration
 
 interface RootComponent {
     val navigationController: StackNavigation<RootChild>

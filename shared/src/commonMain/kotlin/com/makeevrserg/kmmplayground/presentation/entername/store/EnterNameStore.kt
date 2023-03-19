@@ -1,7 +1,9 @@
 package com.makeevrserg.kmmplayground.presentation.entername.store
 
 import com.arkivanov.mvikotlin.core.store.Store
-import com.makeevrserg.kmmplayground.presentation.entername.store.EnterNameStore.*
+import com.makeevrserg.kmmplayground.presentation.entername.store.EnterNameStore.Intent
+import com.makeevrserg.kmmplayground.presentation.entername.store.EnterNameStore.Label
+import com.makeevrserg.kmmplayground.presentation.entername.store.EnterNameStore.State
 
 interface EnterNameStore : Store<Intent, State, Label> {
     sealed interface State {
@@ -32,6 +34,4 @@ interface EnterNameStore : Store<Intent, State, Label> {
         object LoadValue : Intent
         object SaveValue : Intent
     }
-
-
 }

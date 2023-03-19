@@ -6,7 +6,10 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
 import com.makeevrserg.kmmplayground.presentation.root.component.RootComponent
 
 @Composable
-fun CounterScreenComponent(component: RootComponent, viewModel: CounterComponent) {
+fun CounterScreenComponent(
+    component: RootComponent,
+    viewModel: CounterComponent
+) {
     val state by viewModel.counterState.subscribeAsState()
     CounterScreen(
         state = state,
