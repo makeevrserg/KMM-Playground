@@ -14,6 +14,6 @@ class ConnectionStoreImpl(
     Store<Intent, State, Label> by storeFactory.create(
         name = "ConnectionStore",
         initialState = State.Disconnected,
-        executorFactory = { Executor(dispatchers) },
-        reducer = ReducerImpl
+        executorFactory = { ConnectionExecutor(dispatchers) },
+        reducer = ConnectionReducer
     )

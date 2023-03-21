@@ -1,62 +1,55 @@
 package com.makeevrserg.kmmplayground.presentation.screen_selector
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Button
-import androidx.compose.material.Text
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.arkivanov.decompose.router.stack.push
-import com.makeevrserg.kmmplayground.navigation.root.RootScreen
-import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
+import com.makeevrserg.kmmplayground.presentation.root.RootChild
+import com.makeevrserg.kmmplayground.presentation.screen_selector.components.ScreenSelectorButton
 
 @Composable
-fun ScreenSelectorScreen(component: RootComponent) {
+fun ScreenSelectorScreen(
+    receive: (RootChild) -> Unit
+) {
     Column(
-        Modifier.fillMaxSize(),
+        Modifier.fillMaxSize().background(MaterialTheme.colors.background),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         ScreenSelectorButton(
-            component = component,
+            receive = receive,
             text = "Enter Name Screen",
-            screen = RootScreen.EnterName
+            screen = RootChild.EnterName
         )
         ScreenSelectorButton(
-            component = component,
+            receive = receive,
             text = "Sample Screen",
-            screen = RootScreen.SampleScreen
+            screen = RootChild.SampleScreen
         )
         ScreenSelectorButton(
-            component = component,
-            text = "RickMorty",
-            screen = RootScreen.RickAndMorty
+            receive = receive,
+            text = "Counter",
+            screen = RootChild.Counter
         )
         ScreenSelectorButton(
-            component = component,
-            text = "Calculator",
-            screen = RootScreen.Counter
-        )
-
-        ScreenSelectorButton(
-            component = component,
+            receive = receive,
             text = "Connection",
-            screen = RootScreen.ConnectionScreen
+            screen = RootChild.ConnectionScreen
+        )
+        ScreenSelectorButton(
+            receive = receive,
+            text = "BottomNav",
+            screen = RootChild.BottomNav
+        )
+        ScreenSelectorButton(
+            receive = receive,
+            text = "Theme",
+            screen = RootChild.Theme
         )
     }
-}
-
-@Composable
-private fun ScreenSelectorButton(
-    text: String,
-    component: RootComponent,
-    screen: RootScreen
-) {
-    Button(onClick = {
-        component.navigationController.push(screen)
-    }, content = {
-            Text(text)
-        })
 }

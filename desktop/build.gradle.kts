@@ -25,11 +25,14 @@ kotlin {
                 implementation(libs.decompose.compose.jetbrains)
                 // MobileX
                 implementation(libs.mobileX.serviceLocator)
+                implementation(libs.mobileX.core.ktx)
                 // Local
                 implementation(project(":shared"))
                 implementation(project(":modules:features:shared-ui"))
                 implementation(project(":modules:services:core"))
+                implementation(project(":modules:services:data-preferences"))
                 implementation(project(":modules:services:resources"))
+                implementation(project(":modules:services:core-ui"))
             }
         }
         val androidMain by getting {

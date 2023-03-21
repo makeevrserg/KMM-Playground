@@ -57,6 +57,7 @@ kotlin {
                 api(libs.mvikotlin.core)
                 api(libs.mvikotlin.main)
                 api(libs.mvikotlin.extensions.coroutines)
+                api(libs.mvikotlin.rx)
                 // Local
                 api(project(":modules:services:resources"))
                 implementation(project(":modules:services:core"))

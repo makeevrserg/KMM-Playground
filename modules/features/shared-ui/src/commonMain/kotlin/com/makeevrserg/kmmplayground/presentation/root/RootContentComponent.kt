@@ -8,17 +8,20 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.stack.Children
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.slide
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
-import com.makeevrserg.kmmplayground.navigation.root.RootConfiguration
-import com.makeevrserg.kmmplayground.navigation.root.component.RootComponent
+import com.makeevrserg.kmmplayground.presentation.bottomnav.BottomNavContentComponent
 import com.makeevrserg.kmmplayground.presentation.connection.ConnectionScreenComponent
 import com.makeevrserg.kmmplayground.presentation.counter.CounterScreenComponent
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameScreenComponent
-import com.makeevrserg.kmmplayground.presentation.rick_morty.RMRootScreenComponent
+import com.makeevrserg.kmmplayground.presentation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.presentation.sample.SampleScreenComponent
-import com.makeevrserg.kmmplayground.presentation.screen_selector.ScreenSelectorScreen
+import com.makeevrserg.kmmplayground.presentation.screen_selector.ScreenSelectorScreenComponent
+import com.makeevrserg.kmmplayground.presentation.theme.ThemeScreenComponent
 
 @Composable
-fun RootContentComponent(component: RootComponent, modifier: Modifier = Modifier) {
+fun RootContentComponent(
+    component: RootComponent,
+    modifier: Modifier = Modifier
+) {
     val childStack by component.childStack.subscribeAsState()
     Column(modifier = modifier) {
         Children(
@@ -27,12 +30,31 @@ fun RootContentComponent(component: RootComponent, modifier: Modifier = Modifier
             animation = stackAnimation(slide()),
         ) {
             when (val child = it.instance) {
-                is RootConfiguration.Counter -> CounterScreenComponent(child.component, child.viewModel)
-                is RootConfiguration.RickAndMorty -> RMRootScreenComponent(child.component)
-                is RootConfiguration.SampleScreen -> SampleScreenComponent(child.component, child.greeting)
-                is RootConfiguration.ScreenSelector -> ScreenSelectorScreen(child.component)
-                is RootConfiguration.EnterName -> EnterNameScreenComponent(child.component, child.viewModel)
-                is RootConfiguration.ConnectionScreen -> ConnectionScreenComponent(child.component, child.viewModel)
+                is RootConfiguration.Counter -> CounterScreenComponent(child.rootComponent, child.counterComponent)
+
+                is RootConfiguration.SampleScreen -> SampleScreenComponent(child.rootComponent, child.greeting)
+
+                is RootConfiguration.ScreenSelector -> ScreenSelectorScreenComponent(child.rootComponent)
+
+                is RootConfiguration.EnterName -> EnterNameScreenComponent(
+                    child.rootComponent,
+                    child.enterNameComponent
+                )
+
+                is RootConfiguration.ConnectionScreen -> ConnectionScreenComponent(
+                    child.rootComponent,
+                    child.connectionComponent
+                )
+
+                is RootConfiguration.BottomNav -> BottomNavContentComponent(
+                    rootComponent = child.rootComponent,
+                    bottomNavComponent = child.bottomNavComponent
+                )
+
+                is RootConfiguration.Theme -> ThemeScreenComponent(
+                    rootComponent = child.rootComponent,
+                    themeComponent = child.themeComponent
+                )
             }
         }
     }

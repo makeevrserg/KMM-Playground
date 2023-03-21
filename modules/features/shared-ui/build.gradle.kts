@@ -13,6 +13,9 @@ kotlin {
                 implementation(compose.material)
                 implementation(compose.materialIconsExtended)
                 implementation(compose.runtime)
+                // MobileX
+                implementation(libs.mobileX.serviceLocator)
+                implementation(libs.mobileX.core.ktx)
                 // Decompose
                 implementation(libs.decompose.core)
                 implementation(libs.decompose.compose.jetbrains)
@@ -20,6 +23,8 @@ kotlin {
                 implementation(project(":shared"))
                 implementation(project(":modules:services:resources"))
                 implementation(project(":modules:services:core"))
+                implementation(project(":modules:services:core-ui"))
+                implementation(project(":modules:services:data-preferences"))
                 implementation(project(":modules:services:data-preferences"))
             }
         }

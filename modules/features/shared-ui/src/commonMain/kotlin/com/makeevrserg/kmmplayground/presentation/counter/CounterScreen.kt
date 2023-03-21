@@ -1,29 +1,31 @@
 package com.makeevrserg.kmmplayground.presentation.counter
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Button
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.makeevrserg.kmmplayground.components.DefaultTopAppBar
-import com.makeevrserg.kmmplayground.presentation.counter.store.CounterIntent
-import com.makeevrserg.kmmplayground.presentation.counter.store.CounterState
+import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStore.Intent
+import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStore.State
 
 @Composable
 fun CounterScreen(
-    state: CounterState,
+    state: State,
     onBackPressed: () -> Unit,
-    onIntent: (CounterIntent) -> Unit
+    onIntent: (Intent) -> Unit
 ) {
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.background),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        DefaultTopAppBar(text = "Calculator", onBackPressed = onBackPressed)
+        DefaultTopAppBar(text = "Counter", onBackPressed = onBackPressed)
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
@@ -31,7 +33,7 @@ fun CounterScreen(
         ) {
             Text("Counter: ${state.value}")
             Button(
-                onClick = { CounterIntent.Increment.also(onIntent) },
+                onClick = { Intent.Increment.also(onIntent) },
                 content = {
                     Text("Increment")
                 }
@@ -39,7 +41,7 @@ fun CounterScreen(
 
             Button(
                 onClick = {
-                    CounterIntent.Decrement.also(onIntent)
+                    Intent.Decrement.also(onIntent)
                 },
                 content = {
                     Text("Decrement")

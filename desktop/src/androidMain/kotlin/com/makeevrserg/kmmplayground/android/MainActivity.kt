@@ -8,8 +8,9 @@ import androidx.compose.material.lightColors
 import com.arkivanov.decompose.defaultComponentContext
 import com.makeevrserg.kmmplayground.core.shared.PlatformConfiguration
 import com.makeevrserg.kmmplayground.di.ServiceLocator
-import com.makeevrserg.kmmplayground.navigation.root.component.DefaultRootComponent
+import com.makeevrserg.kmmplayground.presentation.root.ComposeApplication
 import com.makeevrserg.kmmplayground.presentation.root.RootContentComponent
+import com.makeevrserg.kmmplayground.presentation.root.component.RootComponentImpl
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,11 +18,9 @@ class MainActivity : ComponentActivity() {
         // TODO Move into Application
         ServiceLocator.platformConfigurationModule.initialize(PlatformConfiguration(applicationContext))
         val componentContext = defaultComponentContext()
-        val rootComponent = DefaultRootComponent(componentContext)
+        val rootComponent = RootComponentImpl(componentContext, ServiceLocator)
         setContent {
-            MaterialTheme(lightColors()) {
-                RootContentComponent(rootComponent)
-            }
+            ComposeApplication(rootComponent)
         }
     }
 }
