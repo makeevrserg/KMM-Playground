@@ -2,18 +2,20 @@ import androidx.compose.material.Text
 import androidx.compose.ui.window.ComposeUIViewController
 import com.arkivanov.decompose.DefaultComponentContext
 import com.arkivanov.essenty.lifecycle.LifecycleRegistry
-//import com.makeevrserg.astralearner.di.ServiceLocator
-//import com.makeevrserg.astralearner.navigation.RootComponent
-//import com.makeevrserg.astralearner.platform.PlatformConfiguration
 import platform.UIKit.UIViewController
+import com.makeevrserg.kmmplayground.core.shared.PlatformConfiguration
+import com.makeevrserg.kmmplayground.di.ServiceLocator
+import com.makeevrserg.kmmplayground.presentation.root.component.RootComponentImpl
+import com.makeevrserg.kmmplayground.presentation.root.ComposeApplication
 
 fun MainViewController(): UIViewController {
-//    ServiceLocator.platformConfiguration.initialize(PlatformConfiguration())
-//    val lifecycle = LifecycleRegistry()
-//    val rootComponentContext = DefaultComponentContext(lifecycle)
-//    val rootComponent = RootComponent(rootComponentContext, ServiceLocator)
+    ServiceLocator.platformConfigurationModule.initialize(PlatformConfiguration())
+    val lifecycle = LifecycleRegistry()
+    val rootComponentContext = DefaultComponentContext(lifecycle)
+    val rootComponent = RootComponentImpl(rootComponentContext, ServiceLocator)
 
     return ComposeUIViewController {
-        Text("Hello world")
+        ComposeApplication(rootComponent)
+//        Text("Hello world")
     }
 }

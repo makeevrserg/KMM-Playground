@@ -31,8 +31,6 @@ kotlin {
             // Decompose
             export(libs.decompose.core)
             export(libs.essenty.lifecycle)
-            // Local
-            export(project(":modules:services:resources"))
         }
     }
 

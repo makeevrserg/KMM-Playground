@@ -14,8 +14,8 @@ kotlin {
                 implementation(compose.materialIconsExtended)
                 implementation(compose.runtime)
                 // Decompose
+                implementation("com.arkivanov.decompose:extensions-compose-jetbrains:${libs.versions.decompose.get()}-compose-experimental")
                 implementation(libs.decompose.core)
-                implementation(libs.decompose.compose.jetbrains)
                 // Local
                 implementation(project(":modules:services:resources"))
             }
@@ -23,6 +23,8 @@ kotlin {
 
         val androidMain by getting {
             dependencies {
+                // Decompose
+                implementation(libs.decompose.compose.jetbrains)
                 // Compose
                 implementation("androidx.compose.ui:ui:1.2.1")
                 implementation("androidx.compose.foundation:foundation:1.2.1")
@@ -30,6 +32,8 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
+                // Decompose
+                implementation(libs.decompose.compose.jetbrains)
                 // Compose
                 implementation(compose.desktop.common)
             }

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 import MultiPlatformLibrary
-
+import Resources
 
 struct SampleView: View {
     let root: RootComponent
