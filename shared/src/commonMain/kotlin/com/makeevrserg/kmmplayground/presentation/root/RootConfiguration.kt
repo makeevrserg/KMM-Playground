@@ -5,6 +5,7 @@ import com.makeevrserg.kmmplayground.presentation.connection.ConnectionComponent
 import com.makeevrserg.kmmplayground.presentation.counter.CounterComponent
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameComponent
 import com.makeevrserg.kmmplayground.presentation.root.component.RootComponent
+import com.makeevrserg.kmmplayground.presentation.theme.ThemeComponent
 import com.makeevrserg.kmmplayground.sample.Greeting
 
 sealed interface RootConfiguration {
@@ -34,6 +35,11 @@ sealed interface RootConfiguration {
 
     class BottomNav(
         val bottomNavComponent: BottomNavComponent,
+        val rootComponent: RootComponent
+    ) : RootConfiguration
+
+    class Theme(
+        val themeComponent: ThemeComponent,
         val rootComponent: RootComponent
     ) : RootConfiguration
 }

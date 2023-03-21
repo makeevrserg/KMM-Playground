@@ -1,13 +1,11 @@
 package com.makeevrserg.kmmplayground.presentation.entername
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.Button
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.Text
-import androidx.compose.material.TextField
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,7 +21,7 @@ internal fun EnterNameScreen(
     onIntent: (Intent) -> Unit
 ) {
     Column(
-        Modifier.fillMaxSize(),
+        Modifier.fillMaxSize().background(MaterialTheme.colors.background),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

@@ -15,6 +15,7 @@ import com.makeevrserg.kmmplayground.presentation.entername.EnterNameScreenCompo
 import com.makeevrserg.kmmplayground.presentation.root.component.RootComponent
 import com.makeevrserg.kmmplayground.presentation.sample.SampleScreenComponent
 import com.makeevrserg.kmmplayground.presentation.screen_selector.ScreenSelectorScreenComponent
+import com.makeevrserg.kmmplayground.presentation.theme.ThemeScreenComponent
 
 @Composable
 fun RootContentComponent(
@@ -48,6 +49,11 @@ fun RootContentComponent(
                 is RootConfiguration.BottomNav -> BottomNavContentComponent(
                     rootComponent = child.rootComponent,
                     bottomNavComponent = child.bottomNavComponent
+                )
+
+                is RootConfiguration.Theme -> ThemeScreenComponent(
+                    rootComponent = child.rootComponent,
+                    themeComponent = child.themeComponent
                 )
             }
         }

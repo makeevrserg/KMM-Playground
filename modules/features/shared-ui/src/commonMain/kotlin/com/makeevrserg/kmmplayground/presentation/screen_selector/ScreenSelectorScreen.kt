@@ -1,8 +1,11 @@
 package com.makeevrserg.kmmplayground.presentation.screen_selector
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,7 +17,7 @@ fun ScreenSelectorScreen(
     receive: (RootChild) -> Unit
 ) {
     Column(
-        Modifier.fillMaxSize(),
+        Modifier.fillMaxSize().background(MaterialTheme.colors.background),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -42,6 +45,11 @@ fun ScreenSelectorScreen(
             receive = receive,
             text = "BottomNav",
             screen = RootChild.BottomNav
+        )
+        ScreenSelectorButton(
+            receive = receive,
+            text = "Theme",
+            screen = RootChild.Theme
         )
     }
 }

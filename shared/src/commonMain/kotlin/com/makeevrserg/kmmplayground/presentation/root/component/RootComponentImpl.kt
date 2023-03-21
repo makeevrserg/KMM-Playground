@@ -16,6 +16,7 @@ import com.makeevrserg.kmmplayground.presentation.counter.CounterComponentImpl
 import com.makeevrserg.kmmplayground.presentation.entername.EnterNameComponentImpl
 import com.makeevrserg.kmmplayground.presentation.root.RootChild
 import com.makeevrserg.kmmplayground.presentation.root.RootConfiguration
+import com.makeevrserg.kmmplayground.presentation.theme.ThemeComponentImpl
 import com.makeevrserg.mobilex.ktx_core.platform.KDispatchers
 
 class RootComponentImpl(
@@ -78,6 +79,14 @@ class RootComponentImpl(
                         )
                     )
                 }
+
+                RootChild.Theme -> RootConfiguration.Theme(
+                    rootComponent = this,
+                    themeComponent = ThemeComponentImpl(
+                        componentContext = context,
+                        localPreferencesRepository = ServiceLocator.localStorageRepository.value
+                    )
+                )
             }
         }
     )

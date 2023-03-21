@@ -21,4 +21,7 @@ sealed interface RootChild : Parcelable {
 
     @Parcelize
     object BottomNav : RootChild
+
+    @Parcelize
+    object Theme : RootChild
 }
