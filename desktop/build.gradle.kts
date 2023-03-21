@@ -6,6 +6,7 @@ plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
     id("com.android.application")
+    kotlin("native.cocoapods")
 }
 kotlin {
     android {
@@ -16,23 +17,37 @@ kotlin {
         }
     }
     jvm("desktop")
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+    cocoapods {
+        version = "1.0.0"
+        summary = "summary"
+        homepage = "homepage"
+        podfile = project.file("../iosApp/Podfile")
+        framework {
+            baseName = "ComposeApp"
+            isStatic = true
+        }
+    }
     sourceSets {
         val commonMain by getting {
 
             dependencies {
+                // Compose
+                implementation(compose.runtime)
+                implementation(compose.foundation)
+                implementation(compose.material)
                 // Decompose
                 implementation(libs.decompose.core)
-                implementation(libs.decompose.compose.jetbrains)
                 // MobileX
                 implementation(libs.mobileX.serviceLocator)
                 implementation(libs.mobileX.core.ktx)
                 // Local
                 implementation(project(":shared"))
-                implementation(project(":modules:features:shared-ui"))
                 implementation(project(":modules:services:core"))
                 implementation(project(":modules:services:data-preferences"))
                 implementation(project(":modules:services:resources"))
-                implementation(project(":modules:services:core-ui"))
             }
         }
         val androidMain by getting {
@@ -43,18 +58,37 @@ kotlin {
                 implementation("androidx.compose.ui:ui-tooling-preview:1.2.1")
                 implementation("androidx.compose.material:material:1.2.1")
                 implementation("androidx.activity:activity-compose:1.5.1")
+                // Decompose
+                implementation(libs.decompose.compose.jetbrains)
                 // MobileX
                 implementation(libs.mobileX.serviceLocator)
                 // Moko
                 implementation(libs.moko.resources.core)
                 implementation(libs.moko.resources.compose)
+                // Local
+                implementation(project(":modules:features:shared-ui"))
+                implementation(project(":modules:services:core-ui"))
             }
         }
         val desktopMain by getting {
             dependencies {
+                // Decompose
+                implementation(libs.decompose.compose.jetbrains)
                 // Compose
                 implementation(compose.desktop.currentOs)
+                // Local
+                implementation(project(":modules:features:shared-ui"))
+                implementation(project(":modules:services:core-ui"))
             }
+        }
+        val iosX64Main by getting
+        val iosArm64Main by getting
+        val iosSimulatorArm64Main by getting
+        val iosMain by creating {
+            dependsOn(commonMain)
+            iosX64Main.dependsOn(this)
+            iosArm64Main.dependsOn(this)
+            iosSimulatorArm64Main.dependsOn(this)
         }
     }
 }
@@ -72,7 +106,8 @@ compose.desktop {
 
 android {
     buildFeatures.compose = true
-    composeOptions.kotlinCompilerExtensionVersion = libs.versions.kotlin.compilerExtensionVersion.get()
+    composeOptions.kotlinCompilerExtensionVersion =
+        libs.versions.kotlin.compilerExtensionVersion.get()
     compileSdk = Application.COMPILE_SDK_VERSION
     defaultConfig {
         applicationId = Application.APPLICATION_ID

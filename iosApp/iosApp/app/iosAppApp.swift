@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MultiPlatformLibrary
+import ComposeApp
 
 @main
 struct iosAppApp: App {
@@ -17,9 +18,23 @@ struct iosAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RootView(rootHolder.root)
-                .onAppear { LifecycleRegistryExtKt.resume(self.rootHolder.lifecycle) }
-                .onDisappear { LifecycleRegistryExtKt.stop(self.rootHolder.lifecycle) }
+            ComposeContentView()
+//             RootView(rootHolder.root)
+//                 .onAppear { LifecycleRegistryExtKt.resume(self.rootHolder.lifecycle) }
+//                 .onDisappear { LifecycleRegistryExtKt.stop(self.rootHolder.lifecycle) }
         }
     }
+}
+struct ComposeContentView: View {
+    var body: some View {
+       ComposeView()
+    }
+}
+
+struct ComposeView: UIViewControllerRepresentable {
+   func makeUIViewController(context: Context) -> UIViewController {
+       MainKt.MainViewController()
+   }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context){}
 }
