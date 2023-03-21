@@ -11,15 +11,20 @@ import MultiPlatformLibrary
 
 struct ChildView: View {
     let child: RootConfiguration
-    let root: CNavigationComponent<RootScreen, RootConfiguration>
+    let root: RootComponent
     var body: some View {
         let childKs = RootConfigurationKs(child)
         switch childKs {
-            case .counter(let configuration): CounterView(root: root, child: configuration, viewModel: configuration.viewModel)
-            case .enterName(let configuration): EnterNameView(root: root, child: configuration, viewModel: configuration.viewModel)
-            case .rickAndMorty(let configuration): Text("RickAndMorty")
+            case .counter(let configuration): CounterView(root: root, child: configuration)
+            case .enterName(let configuration): EnterNameView(root: root, child: configuration)
             case .sampleScreen(let configuration): SampleView(root: root, greeting: configuration.greeting)
             case .screenSelector(let configuration): ScreenSelectorView(root: root, child: configuration)
+        case .bottomNav(_):
+            Text("BottomNav")
+        case .connectionScreen(_):
+            Text("Connection")
+        case .theme(_):
+            Text("Theme")
         }
     }
 }

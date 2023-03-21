@@ -1,5 +1,4 @@
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
-enableFeaturePreview("VERSION_CATALOGS")
 
 pluginManagement {
     repositories {

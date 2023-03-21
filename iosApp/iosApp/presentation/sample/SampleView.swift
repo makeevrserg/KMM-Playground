@@ -11,7 +11,7 @@ import MultiPlatformLibrary
 
 
 struct SampleView: View {
-    let root: CNavigationComponent<RootScreen, RootConfiguration>
+    let root: RootComponent
     let greeting: Greeting
     
     

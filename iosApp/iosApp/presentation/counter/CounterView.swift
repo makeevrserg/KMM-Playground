@@ -8,22 +8,33 @@
 import SwiftUI
 import MultiPlatformLibrary
 import Combine
-import mokoMvvmFlowSwiftUI
 
 struct CounterView: View {
-    let root: CNavigationComponent<RootScreen, RootConfiguration>
-    let child: RootConfigurationCounter
-    @ObservedObject var viewModel: CounterViewModel
+    private let root: RootComponent
+    private let child: RootConfigurationCounter
+    private let counterComponent: CounterComponent
+    @ObservedObject
+    private var state: ObservableValue<CounterStoreState>
+    
+    init(root: RootComponent, child: RootConfigurationCounter) {
+        self.root = root
+        self.child = child
+        self.counterComponent = child.counterComponent
+        self.state = ObservableValue(self.counterComponent.counterState)
+    }
+
     
     var body: some View {
-        Group{
+        let model = state.value
+        
+        return Group{
             
-            Text(viewModel.countState)
+            Text(model.value.description)
             Button("+"){
-                viewModel.acceptCalculator(intent: CounterIntentIncrement())
+                counterComponent.acceptCounterIntent(intent: CounterStoreIntentIncrement())
             }
             Button("-"){
-                viewModel.acceptCalculator(intent: CounterIntentDecrement())
+                counterComponent.acceptCounterIntent(intent: CounterStoreIntentDecrement())
                 
             }
         }

@@ -10,20 +10,22 @@ import MultiPlatformLibrary
 
 class RootHolder : ObservableObject {
     let lifecycle: LifecycleRegistry
-    let root: CNavigationComponent<RootScreen, RootConfiguration>
+    let root: RootComponent
 
     init() {
         lifecycle = LifecycleRegistryKt.LifecycleRegistry()
-        ServiceLocator.shared.platformConfigurationModule.initialize(value: PlatformConfiguration())
-        let component = DefaultRootComponent(
+        let serviceLocator = ServiceLocator.shared
+        serviceLocator.platformConfigurationModule.initialize(value: CorePlatformConfiguration())
+        let component = RootComponentImpl(
             componentContext: DefaultComponentContext(
                 lifecycle: lifecycle,
                 stateKeeper: nil,
                 instanceKeeper: nil,
                 backHandler: nil
-            )
+            ),
+            serviceLocator: serviceLocator
         )
-        root = CNavigationComponent(component: component)
+        root = component
 
         lifecycle.onCreate()
     }

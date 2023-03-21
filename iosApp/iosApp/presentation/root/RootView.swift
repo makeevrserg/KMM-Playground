@@ -10,14 +10,14 @@ import SwiftUI
 import MultiPlatformLibrary
 
 struct RootView: View{
-    private let root: CNavigationComponent<RootScreen, RootConfiguration>
+    private let root: RootComponent
     
     @ObservedObject
-    private var childStack: ObservableValue<ChildStack<RootScreen, RootConfiguration>>
+    private var childStack: ObservableValue<ChildStack<RootChild, RootConfiguration>>
     
-    private var stack: ChildStack<RootScreen, RootConfiguration> { childStack.value }
+    private var stack: ChildStack<RootChild, RootConfiguration> { childStack.value }
     
-    init(_ root: CNavigationComponent<RootScreen, RootConfiguration>) {
+    init(_ root: RootComponent) {
         self.root = root
         childStack = ObservableValue(root.childStack)
     }
