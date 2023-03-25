@@ -1,6 +1,7 @@
 import SwiftUI
 import UIKit
 import MultiPlatformLibrary
+import Resources
 
 struct StackView<K:AnyObject, T: AnyObject, Content: View>: View {
     @ObservedObject

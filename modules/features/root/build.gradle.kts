@@ -16,7 +16,7 @@ kotlin {
         homepage = "Link to the Shared Module homepage"
         version = "1.0"
         ios.deploymentTarget = "14.1"
-        podfile = project.file("../iosApp/Podfile")
+        podfile = project.file("../../../iosApp/Podfile")
         framework {
             baseName = "MultiPlatformLibrary"
             isStatic = false
@@ -32,7 +32,8 @@ kotlin {
             export(libs.decompose.core)
             export(libs.essenty.lifecycle)
             // Local
-            export(project(":modules:services:resources"))
+            export(project(":modules:features:common"))
+            export(project(":modules:services:platform"))
         }
     }
 
@@ -59,11 +60,11 @@ kotlin {
                 api(libs.mvikotlin.extensions.coroutines)
                 api(libs.mvikotlin.rx)
                 // Local
-                api(project(":modules:services:resources"))
+                implementation(project(":modules:services:resources"))
                 implementation(project(":modules:services:core"))
                 implementation(project(":modules:services:data-preferences"))
-                implementation(project(":modules:features:common"))
-                implementation(project(":modules:services:platform"))
+                api(project(":modules:features:common"))
+                api(project(":modules:services:platform"))
             }
         }
         val androidMain by getting {

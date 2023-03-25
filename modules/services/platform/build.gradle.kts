@@ -7,7 +7,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(libs.moko.resources.core)
+                api(libs.moko.resources.core)
                 implementation(project(":modules:services:resources"))
             }
         }

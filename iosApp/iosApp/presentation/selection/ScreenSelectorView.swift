@@ -7,27 +7,25 @@
 
 import SwiftUI
 import MultiPlatformLibrary
+import Resources
 
 struct ScreenSelectorView: View {
-    let root: CNavigationComponent<RootScreen, RootConfiguration>
+    let root: RootComponent
     let child: RootConfigurationScreenSelector
     
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
-            Button("Open rick and morty"){
-                root.push(screen: RootScreenRickAndMorty())
-            }
             Button("Open sample"){
-                root.push(screen: RootScreenSampleScreen())
+                root.push(screen: RootChildSampleScreen())
                 
             }
             Button("Open counter"){
-                root.push(screen:RootScreenCounter())
+                root.push(screen:RootChildCounter())
                 
             }
             
             Button("Open NameEntering"){
-                root.push(screen:RootScreenEnterName())
+                root.push(screen:RootChildEnterName())
                 
             }
         }

@@ -18,7 +18,7 @@ kotlin {
                 implementation(libs.mobileX.core.ktx)
                 // Decompose
                 implementation(libs.decompose.core)
-                implementation(libs.decompose.compose.jetbrains)
+                implementation("com.arkivanov.decompose:extensions-compose-jetbrains:${libs.versions.decompose.get()}-compose-experimental")
                 // Local
                 implementation(project(":modules:features:root"))
                 implementation(project(":modules:features:common"))

@@ -3,7 +3,6 @@ import com.makeevrserg.kmmplayground.Application
 plugins {
     id("kmm-library-convention")
     id("dev.icerock.moko.kswift")
-    kotlin("native.cocoapods")
     kotlin("plugin.serialization")
 }
 
@@ -11,55 +10,31 @@ kotlin {
     android {
         apply(plugin = "kotlin-parcelize")
     }
-    cocoapods {
-        summary = "Some description for the Shared Module"
-        homepage = "Link to the Shared Module homepage"
-        version = "1.0"
-        ios.deploymentTarget = "14.1"
-        podfile = project.file("../iosApp/Podfile")
-        framework {
-            baseName = "MultiPlatformLibrary"
-            isStatic = false
-            // Moko
-            export(libs.moko.mvvm.core)
-            export(libs.moko.mvvm.flow)
-            // Resources
-            export(libs.moko.resources.core)
-            export(libs.moko.graphics)
-            // KSwift
-            export(libs.moko.kswift)
-            // Decompose
-            export(libs.decompose.core)
-            export(libs.essenty.lifecycle)
-            // Local
-            export(project(":modules:services:resources"))
-        }
-    }
 
     sourceSets {
         val commonMain by getting {
             dependencies {
                 implementation(kotlin("test"))
                 implementation(libs.multiplatformSetting)
-                api(libs.moko.mvvm.core)
-                api(libs.moko.mvvm.flow)
-                api(libs.moko.resources.core)
-                api(libs.moko.kswift)
+                implementation(libs.moko.mvvm.core)
+                implementation(libs.moko.mvvm.flow)
+                implementation(libs.moko.resources.core)
+                implementation(libs.moko.kswift)
                 // MobileX
                 implementation(libs.mobileX.serviceLocator)
                 implementation(libs.mobileX.core.ktx)
                 // Serialization
                 implementation(libs.kotlin.serialization.json)
                 // Decompose
-                api(libs.decompose.core)
-                api(libs.essenty.lifecycle)
+                implementation(libs.decompose.core)
+                implementation(libs.essenty.lifecycle)
                 // MVIKotlin
-                api(libs.mvikotlin.core)
-                api(libs.mvikotlin.main)
-                api(libs.mvikotlin.extensions.coroutines)
-                api(libs.mvikotlin.rx)
+                implementation(libs.mvikotlin.core)
+                implementation(libs.mvikotlin.main)
+                implementation(libs.mvikotlin.extensions.coroutines)
+                implementation(libs.mvikotlin.rx)
                 // Local
-                api(project(":modules:services:resources"))
+                implementation(project(":modules:services:resources"))
                 implementation(project(":modules:services:core"))
                 implementation(project(":modules:services:data-preferences"))
             }

@@ -15,7 +15,7 @@ kotlin {
                 implementation(compose.runtime)
                 // Decompose
                 implementation(libs.decompose.core)
-                implementation(libs.decompose.compose.jetbrains)
+                implementation("com.arkivanov.decompose:extensions-compose-jetbrains:${libs.versions.decompose.get()}-compose-experimental")
                 // Local
                 implementation(project(":modules:services:resources"))
             }

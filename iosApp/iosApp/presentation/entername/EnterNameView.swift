@@ -7,44 +7,51 @@
 
 import SwiftUI
 import MultiPlatformLibrary
+import Resources
 import Combine
-import mokoMvvmFlowSwiftUI
 
 struct EnterNameView: View {
-    let root: CNavigationComponent<RootScreen, RootConfiguration>
-    let child: RootConfigurationEnterName
-    @ObservedObject var viewModel: EnterNameViewModel
+    private let root: RootComponent
+    private let child: RootConfigurationEnterName
+    private let enterNameComponent: EnterNameComponent
+    @ObservedObject
+    private var state: ObservableValue<EnterNameStoreState>
+    
     @State var isSuccesfullToastShowed = false
     
-    init(root: CNavigationComponent<RootScreen, RootConfiguration>, child: RootConfigurationEnterName, viewModel: EnterNameViewModel) {
+    init(root: RootComponent, child: RootConfigurationEnterName) {
         self.root = root
         self.child = child
-        self.viewModel = viewModel
+        self.enterNameComponent = child.enterNameComponent
+        self.state = ObservableValue(self.enterNameComponent.enterNameState)
     }
+    
     var body: some View {
-        EnterNameContent(state: viewModel.state){ intent in
-            viewModel.acceptEnterName(intent: intent)
-        }.onReceive(createPublisher(viewModel.enterNameLabels)) { label in
-            isSuccesfullToastShowed = true
-        }.toast(isDisplayed: $isSuccesfullToastShowed, text: "Successfully saved!")
+        let stateModel = state.value
+        return EnterNameContent(state: stateModel){ intent in
+            enterNameComponent.acceptEnterName(intent: intent)
+        }
+//        .onReceive(createPublisher(enterNameComponent.enterNameLabels)) { label in
+//            isSuccesfullToastShowed = true
+//        }.toast(isDisplayed: $isSuccesfullToastShowed, text: "Successfully saved!")
     }
 }
 
 
 private struct EnterNameContent: View{
-    let state: EnterNameState
-    let onIntent: (EnterNameIntent) -> Void
+    let state: EnterNameStoreState
+    let onIntent: (EnterNameStoreIntent) -> Void
 
     var body: some View {
-        let stateKs = EnterNameStateKs(state)
+        let stateKs = EnterNameStoreStateKs(state)
         switch stateKs {
         case .loaded(let loadedState): VStack {
-            let inputNameBinding = Binding(get: { loadedState.name }, set: { value in onIntent(EnterNameIntentEntered(value: value)) })
+            let inputNameBinding = Binding(get: { loadedState.name }, set: { value in onIntent(EnterNameStoreIntentEntered(value: value)) })
             TextField(text: inputNameBinding) {
                 Text("Input name")
             }.disabled(loadedState.isLoading)
             Button(action:{
-                onIntent(EnterNameIntentSaveValue())
+                onIntent(EnterNameStoreIntentSaveValue())
             },label:{
               Text("Save")
             }).disabled(!state.isButtonEnabled)

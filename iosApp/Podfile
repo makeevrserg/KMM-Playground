@@ -1,6 +1,7 @@
 target 'iosApp' do
   use_frameworks!
   platform :ios, '14.1'
-  pod 'shared', :path => '../shared'
+  pod 'resources', :path => '../modules/services/resources'
+  pod 'root', :path => '../modules/features/root'
   pod 'mokoMvvmFlowSwiftUI', :podspec => 'https://raw.githubusercontent.com/icerockdev/moko-mvvm/release/0.15.0/mokoMvvmFlowSwiftUI.podspec'
 end

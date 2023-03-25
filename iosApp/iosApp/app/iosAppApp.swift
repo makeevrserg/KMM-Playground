@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MultiPlatformLibrary
+import Resources
 
 @main
 struct iosAppApp: App {

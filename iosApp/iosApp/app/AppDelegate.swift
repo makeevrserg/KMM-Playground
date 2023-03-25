@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import MultiPlatformLibrary
+import Resources
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     private var rootHolder: RootHolder?

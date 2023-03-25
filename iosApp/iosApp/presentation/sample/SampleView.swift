@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 import MultiPlatformLibrary
-
+import Resources
 
 struct SampleView: View {
-    let root: CNavigationComponent<RootScreen, RootConfiguration>
+    let root: RootComponent
     let greeting: Greeting
     
     

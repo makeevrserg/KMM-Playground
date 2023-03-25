@@ -7,7 +7,9 @@
 
 import Foundation
 import SwiftUI
-import MultiPlatformLibrary
+import Root
+import Common
+import Resources
 import Combine
 import mokoMvvmFlowSwiftUI
 
