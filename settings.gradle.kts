@@ -30,3 +30,4 @@ include(":modules:services:data-preferences")
 // Features
 include(":modules:features:shared-ui")
 include(":modules:features:root")
+include(":modules:features:common")

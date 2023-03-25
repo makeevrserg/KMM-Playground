@@ -62,7 +62,6 @@ kotlin {
                 api(project(":modules:services:resources"))
                 implementation(project(":modules:services:core"))
                 implementation(project(":modules:services:data-preferences"))
-                implementation(project(":modules:features:common"))
             }
         }
         val androidMain by getting {
@@ -78,7 +77,7 @@ kotlin {
     }
 }
 android {
-    namespace = Application.APPLICATION_ID + ".shared"
+    namespace = Application.APPLICATION_ID + ".common"
 }
 
 kswift {

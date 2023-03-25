@@ -21,6 +21,7 @@ kotlin {
                 implementation(libs.decompose.compose.jetbrains)
                 // Local
                 implementation(project(":modules:features:root"))
+                implementation(project(":modules:features:common"))
                 implementation(project(":modules:services:resources"))
                 implementation(project(":modules:services:core"))
                 implementation(project(":modules:services:core-ui"))
