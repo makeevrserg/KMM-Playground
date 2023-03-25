@@ -47,5 +47,5 @@ kotlin {
     }
 }
 android {
-    namespace = "$APPLICATION_ID.shared_ui"
+    namespace = "$APPLICATION_ID.shared.ui"
 }

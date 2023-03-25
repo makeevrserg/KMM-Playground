@@ -79,7 +79,7 @@ kotlin {
     }
 }
 android {
-    namespace = Application.APPLICATION_ID + ".shared"
+    namespace = Application.APPLICATION_ID + ".root"
 }
 
 kswift {

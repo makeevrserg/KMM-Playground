@@ -15,5 +15,5 @@ kotlin {
 }
 
 android {
-    namespace = Application.APPLICATION_ID + ".core"
+    namespace = Application.APPLICATION_ID + ".platform"
 }
