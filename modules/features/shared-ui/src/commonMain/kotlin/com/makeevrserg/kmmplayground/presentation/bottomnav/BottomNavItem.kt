@@ -6,12 +6,10 @@ sealed interface BottomNavItem {
     object Profile : BottomNavItem {
         override val asChild: BottomNavComponent.Child
             get() = BottomNavComponent.Child.Profile
-
     }
 
     object List : BottomNavItem {
         override val asChild: BottomNavComponent.Child
             get() = BottomNavComponent.Child.List
-
     }
 }

@@ -17,4 +17,3 @@ internal class LocalPreferencesRepositoryImpl(
         values = ThemeEnum.values()
     )
 }
-

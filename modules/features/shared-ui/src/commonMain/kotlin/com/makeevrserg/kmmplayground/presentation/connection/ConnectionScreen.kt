@@ -17,9 +17,11 @@ import com.makeevrserg.kmmplayground.presentation.connection.store.ConnectionSto
 fun ConnectionScreen(
     state: ConnectionStore.State,
     onTabBackPressed: () -> Unit,
-    onIntent: (ConnectionStore.Intent) -> Unit
+    onIntent: (ConnectionStore.Intent) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Scaffold(
+        modifier = modifier,
         topBar = {
             DefaultTopAppBar(onBackPressed = onTabBackPressed)
         }

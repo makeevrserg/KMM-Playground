@@ -18,10 +18,11 @@ import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStore.Sta
 fun CounterScreen(
     state: State,
     onBackPressed: () -> Unit,
-    onIntent: (Intent) -> Unit
+    onIntent: (Intent) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.background),
+        modifier = modifier.fillMaxSize().background(MaterialTheme.colors.background),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

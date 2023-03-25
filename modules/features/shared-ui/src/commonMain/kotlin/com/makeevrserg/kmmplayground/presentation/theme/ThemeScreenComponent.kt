@@ -12,15 +12,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.makeevrserg.kmmplayground.components.DefaultTopAppBar
 import com.makeevrserg.kmmplayground.core.ui.theme.LocalAppTheme
-import com.makeevrserg.kmmplayground.presentation.counter.store.CounterStore
 import com.makeevrserg.kmmplayground.presentation.root.component.RootComponent
 
 @Composable
 fun ThemeScreenComponent(
     rootComponent: RootComponent,
-    themeComponent: ThemeComponent
+    themeComponent: ThemeComponent,
+    modifier: Modifier = Modifier
 ) {
     Scaffold(
+        modifier = modifier,
         topBar = {
             DefaultTopAppBar(onBackPressed = rootComponent::pop)
         },
@@ -49,6 +50,5 @@ fun ThemeScreenComponent(
                 }
             )
         }
-
     }
 }

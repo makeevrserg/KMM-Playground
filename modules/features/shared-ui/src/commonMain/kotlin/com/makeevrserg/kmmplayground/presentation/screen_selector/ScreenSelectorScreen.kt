@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,10 +13,11 @@ import com.makeevrserg.kmmplayground.presentation.screen_selector.components.Scr
 
 @Composable
 fun ScreenSelectorScreen(
-    receive: (RootChild) -> Unit
+    receive: (RootChild) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Column(
-        Modifier.fillMaxSize().background(MaterialTheme.colors.background),
+        modifier = modifier.fillMaxSize().background(MaterialTheme.colors.background),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

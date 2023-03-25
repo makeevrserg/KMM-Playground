@@ -1,6 +1,10 @@
 package com.makeevrserg.kmmplayground.presentation.bottomnav
 
-import androidx.compose.material.*
+import androidx.compose.material.BottomNavigation
+import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.Icon
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.HideImage
 import androidx.compose.runtime.Composable
@@ -17,6 +21,7 @@ import com.makeevrserg.kmmplayground.presentation.root.component.RootComponent
 fun BottomNavContentComponent(
     rootComponent: RootComponent,
     bottomNavComponent: BottomNavComponent,
+    modifier: Modifier = Modifier
 ) {
     val childStack by bottomNavComponent.childStack.subscribeAsState()
 
@@ -26,6 +31,7 @@ fun BottomNavContentComponent(
     )
 
     Scaffold(
+        modifier = modifier,
         topBar = {
             DefaultTopAppBar(onBackPressed = rootComponent::pop)
         },
@@ -59,5 +65,4 @@ fun BottomNavContentComponent(
             }
         }
     }
-
 }

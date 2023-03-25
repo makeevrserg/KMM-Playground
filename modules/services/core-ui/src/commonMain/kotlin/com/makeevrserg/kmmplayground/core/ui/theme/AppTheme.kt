@@ -1,8 +1,12 @@
 package com.makeevrserg.kmmplayground.core.ui.theme
 
-import androidx.compose.material.*
+import androidx.compose.material.Colors
+import androidx.compose.material.Shapes
+import androidx.compose.material.Typography
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.ProvidableCompositionLocal
-import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.graphics.Color
 
 sealed class AppTheme(
@@ -29,6 +33,6 @@ sealed class AppTheme(
     )
 }
 
-val LocalAppTheme: ProvidableCompositionLocal<AppTheme> = staticCompositionLocalOf {
+val LocalAppTheme: ProvidableCompositionLocal<AppTheme> = compositionLocalOf {
     AppTheme.DefaultDarkTheme
 }
