@@ -27,7 +27,7 @@ kotlin {
                 implementation(libs.mobileX.serviceLocator)
                 implementation(libs.mobileX.core.ktx)
                 // Local
-                implementation(project(":shared"))
+                implementation(project(":modules:features:root"))
                 implementation(project(":modules:features:shared-ui"))
                 implementation(project(":modules:services:core"))
                 implementation(project(":modules:services:data-preferences"))
