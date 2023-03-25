@@ -63,6 +63,7 @@ kotlin {
                 implementation(project(":modules:services:core"))
                 implementation(project(":modules:services:data-preferences"))
                 implementation(project(":modules:features:common"))
+                implementation(project(":modules:services:platform"))
             }
         }
         val androidMain by getting {

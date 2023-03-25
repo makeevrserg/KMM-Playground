@@ -25,6 +25,7 @@ include(":desktop")
 // Services
 include(":modules:services:resources")
 include(":modules:services:core")
+include(":modules:services:platform")
 include(":modules:services:core-ui")
 include(":modules:services:data-preferences")
 // Features
