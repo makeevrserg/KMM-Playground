@@ -3,6 +3,6 @@ target 'iosApp' do
   platform :ios, '14.1'
   pod 'resources', :path => '../modules/services/resources'
   pod 'root', :path => '../modules/features/root'
-  pod 'desktop', :path => '../desktop'
+#   pod 'desktop', :path => '../desktop'
   pod 'mokoMvvmFlowSwiftUI', :podspec => 'https://raw.githubusercontent.com/icerockdev/moko-mvvm/release/0.15.0/mokoMvvmFlowSwiftUI.podspec'
 end

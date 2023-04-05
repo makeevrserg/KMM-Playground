@@ -16,6 +16,10 @@ class CounterStoreImpl(
         executorFactory = coroutineExecutorFactory {
             onIntent<Intent> {
                 dispatch(it)
+                when(it){
+                    is Intent.Increment -> Label.OnIncremented.also(::publish)
+                    is Intent.Decrement -> Label.OnDecremented.also(::publish)
+                }
             }
         },
         reducer = CounterReducer

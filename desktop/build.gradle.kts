@@ -8,7 +8,7 @@ plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
     id("com.android.application")
-    kotlin("native.cocoapods")
+//    kotlin("native.cocoapods")
 }
 kotlin {
     android {
@@ -19,19 +19,19 @@ kotlin {
         }
     }
     jvm("desktop")
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
-    cocoapods {
-        version = "1.0.0"
-        summary = "summary"
-        homepage = "homepage"
-        podfile = project.file("../iosApp/Podfile")
-        framework {
-            baseName = "ComposeApp"
-            isStatic = true
-        }
-    }
+//    iosX64()
+//    iosArm64()
+//    iosSimulatorArm64()
+//    cocoapods {
+//        version = "1.0.0"
+//        summary = "summary"
+//        homepage = "homepage"
+//        podfile = project.file("../iosApp/Podfile")
+//        framework {
+//            baseName = "ComposeApp"
+//            isStatic = true
+//        }
+//    }
     sourceSets {
         val commonMain by getting {
 
@@ -72,15 +72,15 @@ kotlin {
                 implementation(compose.desktop.currentOs)
             }
         }
-        val iosX64Main by getting
-        val iosArm64Main by getting
-        val iosSimulatorArm64Main by getting
-        val iosMain by creating {
-            dependsOn(commonMain)
-            iosX64Main.dependsOn(this)
-            iosArm64Main.dependsOn(this)
-            iosSimulatorArm64Main.dependsOn(this)
-        }
+//        val iosX64Main by getting
+//        val iosArm64Main by getting
+//        val iosSimulatorArm64Main by getting
+//        val iosMain by creating {
+//            dependsOn(commonMain)
+//            iosX64Main.dependsOn(this)
+//            iosArm64Main.dependsOn(this)
+//            iosSimulatorArm64Main.dependsOn(this)
+//        }
     }
 }
 

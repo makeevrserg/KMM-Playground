@@ -16,7 +16,12 @@ struct CounterView: View {
     private let counterComponent: CounterComponent
     @ObservedObject
     private var state: ObservableValue<CounterStoreState>
-    
+    @State
+    private var toastData: ToastData = ToastData(message: "", isShowed: false)
+    struct ToastData{
+        var message: String
+        var isShowed: Bool
+    }
     init(root: RootComponent, child: RootConfigurationCounter) {
         self.root = root
         self.child = child
@@ -28,7 +33,7 @@ struct CounterView: View {
     var body: some View {
         let model = state.value
         
-        return Group{
+        return VStack{
             
             Text(model.value.description)
             Button("+"){
@@ -38,6 +43,8 @@ struct CounterView: View {
                 counterComponent.acceptCounterIntent(intent: CounterStoreIntentDecrement())
                 
             }
-        }
+        }.onReceive(createPublisher(counterComponent.counterLabels)){ label in
+            toastData = ToastData(message: "\(label)", isShowed: true)
+        }.toast(isDisplayed: $toastData.isShowed, text: toastData.message)
     }
 }

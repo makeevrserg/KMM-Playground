@@ -15,6 +15,7 @@
 		A813395429893D400031FDF9 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813395329893D400031FDF9 /* CounterView.swift */; };
 		A8370129299966B1008F19CB /* com_makeevrserg_kmmplayground_shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8370128299966B1008F19CB /* com_makeevrserg_kmmplayground_shared.swift */; };
 		A837012C29996978008F19CB /* EnterNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837012B29996978008F19CB /* EnterNameView.swift */; };
+		A839B37229DD870300727318 /* CFlowExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A839B37129DD870300727318 /* CFlowExt.swift */; };
 		A83EC2722998FD8A003952A7 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2FB99B60FA1F7B69CAE30E /* Pods_iosApp.framework */; };
 		A84D9D77297D798A00BA1DC6 /* iosAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D76297D798A00BA1DC6 /* iosAppApp.swift */; };
 		A84D9D79297D798A00BA1DC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D9D78297D798A00BA1DC6 /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 		A813395329893D400031FDF9 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		A8370128299966B1008F19CB /* com_makeevrserg_kmmplayground_shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = com_makeevrserg_kmmplayground_shared.swift; path = ../../../shared/build/bin/iosArm64/podDebugFramework/MultiPlatformLibrarySwift/com_makeevrserg_kmmplayground_shared.swift; sourceTree = "<group>"; };
 		A837012B29996978008F19CB /* EnterNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameView.swift; sourceTree = "<group>"; };
+		A839B37129DD870300727318 /* CFlowExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFlowExt.swift; sourceTree = "<group>"; };
 		A84D9D73297D798A00BA1DC6 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84D9D76297D798A00BA1DC6 /* iosAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosAppApp.swift; sourceTree = "<group>"; };
 		A84D9D78297D798A00BA1DC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				A84D9D85297D7A1B00BA1DC6 /* ObservableValue.swift */,
+				A839B37129DD870300727318 /* CFlowExt.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				A837012C29996978008F19CB /* EnterNameView.swift in Sources */,
 				A8BC3315299D68C900230980 /* ToastModifier.swift in Sources */,
 				A84D9D92297D7A1B00BA1DC6 /* ViewController.swift in Sources */,
+				A839B37229DD870300727318 /* CFlowExt.swift in Sources */,
 				A84D9D99297D7A3F00BA1DC6 /* RootHolder.swift in Sources */,
 				A813395429893D400031FDF9 /* CounterView.swift in Sources */,
 				A84D9D91297D7A1B00BA1DC6 /* ObservableValue.swift in Sources */,
