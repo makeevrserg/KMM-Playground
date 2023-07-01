@@ -1,8 +1,6 @@
-# KMM Playground [WIP]
+# KMM Playground [Deprecated]
 
-<p align="center">
-    KMM Playground is a simple Kotlin Multiplatform application for IOS, JS and JVM example with shared logic
-</p>
+See real life implementation of KMM application on [Empire Projekt Mobile](https://github.com/makeevrserg/EmpireProjekt-Mobile)
 
 ### **Platforms**
 
